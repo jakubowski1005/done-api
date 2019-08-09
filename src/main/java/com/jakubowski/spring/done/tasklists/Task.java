@@ -1,7 +1,14 @@
 package com.jakubowski.spring.done.tasklists;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Task {
 
+    @Id
+    @GeneratedValue
     private Long id;
     private String description;
     private String priority;
@@ -9,8 +16,7 @@ public class Task {
 
     protected Task() {}
 
-    public Task(Long id, String description, String priority, boolean isDone) {
-        this.id = id;
+    public Task(String description, String priority, boolean isDone) {
         this.description = description;
         this.priority = priority;
         this.isDone = isDone;
@@ -18,10 +24,6 @@ public class Task {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getDescription() {

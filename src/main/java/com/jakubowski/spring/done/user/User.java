@@ -2,11 +2,17 @@ package com.jakubowski.spring.done.user;
 
 import com.jakubowski.spring.done.tasklists.TaskList;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Collections;
 import java.util.List;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue
     private Long id;
     private String username;
     private String email;
@@ -17,9 +23,8 @@ public class User {
 
     protected User() {}
 
-    public User(Long id, String username, String email, String password,
+    public User(String username, String email, String password,
                 List<TaskList> lists, UserProperties userProperties, UserStatistics userStatistics) {
-        this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -30,10 +35,6 @@ public class User {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUsername() {
