@@ -1,7 +1,15 @@
 package com.jakubowski.spring.done.user;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class UserStatistics {
 
+    @Id
+    @GeneratedValue
+    private Long id;
     private int completedLists;
     private int completedTasks;
     private int daysWithDone;

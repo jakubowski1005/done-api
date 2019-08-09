@@ -5,7 +5,8 @@ import com.jakubowski.spring.done.tasklists.TaskList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Collections;
+import javax.persistence.OneToOne;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,14 +18,16 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private List<TaskList> lists = Collections.emptyList();
+    private ArrayList<TaskList> lists = null;
+    @OneToOne
     private UserProperties userProperties = null;
+    @OneToOne
     private UserStatistics userStatistics = null;
 
     protected User() {}
 
     public User(String username, String email, String password,
-                List<TaskList> lists, UserProperties userProperties, UserStatistics userStatistics) {
+                ArrayList<TaskList> lists, UserProperties userProperties, UserStatistics userStatistics) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -65,7 +68,7 @@ public class User {
         return lists;
     }
 
-    public void setLists(List<TaskList> lists) {
+    public void setLists(ArrayList<TaskList> lists) {
         this.lists = lists;
     }
 

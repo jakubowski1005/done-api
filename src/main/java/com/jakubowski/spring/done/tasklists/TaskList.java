@@ -1,19 +1,25 @@
 package com.jakubowski.spring.done.tasklists;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class TaskList {
 
+    @Id
+    @GeneratedValue
     private Long id;
     private String listName;
     private double progress;
     private String color;
-    private List<Task> tasks;
+    private ArrayList<Task> tasks;
 
     protected TaskList() {}
 
-    public TaskList(Long id, String listName, double progress, String color, List<Task> tasks) {
-        this.id = id;
+    public TaskList(String listName, double progress, String color, ArrayList<Task> tasks) {
         this.listName = listName;
         this.progress = progress;
         this.color = color;
@@ -22,10 +28,6 @@ public class TaskList {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getListName() {
@@ -56,7 +58,7 @@ public class TaskList {
         return tasks;
     }
 
-    public void setTasks(List<Task> tasks) {
+    public void setTasks(ArrayList<Task> tasks) {
         this.tasks = tasks;
     }
 

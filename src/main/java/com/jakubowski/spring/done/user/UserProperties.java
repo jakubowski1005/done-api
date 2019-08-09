@@ -1,7 +1,15 @@
 package com.jakubowski.spring.done.user;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class UserProperties {
 
+    @Id
+    @GeneratedValue
+    private Long id;
     private String firstName;
     private String lastName;
     private boolean isMale;
