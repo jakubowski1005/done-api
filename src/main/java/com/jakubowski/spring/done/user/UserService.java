@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
 
 @Service
 public class UserService {
@@ -19,7 +22,8 @@ public class UserService {
         }
 
         userRepository.deleteById(id);
-        return null;
+        userRepository.save(user);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     public ResponseEntity<User> createUser(User user) {
@@ -36,8 +40,14 @@ public class UserService {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
-        userRepository.save(user);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        User createdUser = userRepository.save(user);
+        URI uri = ServletUriComponentsBuilder
+                    .fromCurrentRequest()
+                    .path("/{id}")
+                    .buildAndExpand(createdUser.getId())
+                    .toUri();
+
+        return ResponseEntity.created(uri).build();
     }
 
 }
