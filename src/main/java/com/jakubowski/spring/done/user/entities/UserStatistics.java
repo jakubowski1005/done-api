@@ -1,4 +1,4 @@
-package com.jakubowski.spring.done.user;
+package com.jakubowski.spring.done.user.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

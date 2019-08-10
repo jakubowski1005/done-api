@@ -1,5 +1,8 @@
-package com.jakubowski.spring.done.user;
+package com.jakubowski.spring.done.user.controllers;
 
+import com.jakubowski.spring.done.user.entities.User;
+import com.jakubowski.spring.done.user.repositories.UserRepository;
+import com.jakubowski.spring.done.user.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,28 +18,28 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/users")
+    @GetMapping("/api/v1/jpa/users")
     public List<User> getUsers() {
         return userRepository.findAll();
     }
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/api/v1/jpa/users/{id}")
     public User getUserById(@PathVariable long id) {
         return userRepository.findById(id).get();
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/api/v1/jpa/users/{id}")
     public ResponseEntity<Void> deleteUserById(@PathVariable long id) {
        userRepository.deleteById(id);
        return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/users")
+    @PostMapping("/api/v1/jpa/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
 
-    @PutMapping("/users/{id}")
+    @PutMapping("/api/v1/jpa/users/{id}")
     public ResponseEntity<User> updateUser(@PathVariable long id, @RequestBody User user) {
         return userService.updateUser(id, user);
     }

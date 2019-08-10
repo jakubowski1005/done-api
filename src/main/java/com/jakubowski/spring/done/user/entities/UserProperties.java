@@ -1,8 +1,6 @@
-package com.jakubowski.spring.done.user;
+package com.jakubowski.spring.done.user.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class UserProperties {
@@ -14,6 +12,9 @@ public class UserProperties {
     private String lastName;
     private boolean isMale;
     private String avatarPath;
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     protected UserProperties() {}
 
@@ -26,6 +27,14 @@ public class UserProperties {
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setFirstName(String firstName) {
@@ -54,5 +63,13 @@ public class UserProperties {
 
     public void setAvatarPath(String avatarPath) {
         this.avatarPath = avatarPath;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

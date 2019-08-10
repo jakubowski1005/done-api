@@ -1,11 +1,8 @@
-package com.jakubowski.spring.done.user;
+package com.jakubowski.spring.done.user.entities;
 
 import com.jakubowski.spring.done.tasklists.TaskList;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,22 +15,22 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private ArrayList<TaskList> lists = null;
-    @OneToOne
-    private UserProperties userProperties = null;
-    @OneToOne
-    private UserStatistics userStatistics = null;
+//    @OneToOne(cascade = {CascadeType.ALL}, mappedBy = "user")
+//    private ArrayList<TaskList> lists;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    private UserProperties userProperties;
+//    @OneToOne(cascade = {CascadeType.ALL}, mappedBy = "user")
+//    private UserStatistics userStatistics;
 
     protected User() {}
 
-    public User(String username, String email, String password,
-                ArrayList<TaskList> lists, UserProperties userProperties, UserStatistics userStatistics) {
+    public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.lists = lists;
-        this.userProperties = userProperties;
-        this.userStatistics = userStatistics;
+//        this.lists = lists;
+        this.userProperties = new UserProperties("", "", false, "");
+//        this.userStatistics = userStatistics;
     }
 
     public Long getId() {
@@ -64,13 +61,7 @@ public class User {
         this.password = password;
     }
 
-    public List<TaskList> getLists() {
-        return lists;
-    }
 
-    public void setLists(ArrayList<TaskList> lists) {
-        this.lists = lists;
-    }
 
     public UserProperties getUserProperties() {
         return userProperties;
@@ -80,13 +71,7 @@ public class User {
         this.userProperties = userProperties;
     }
 
-    public UserStatistics getUserStatistics() {
-        return userStatistics;
-    }
 
-    public void setUserStatistics(UserStatistics userStatistics) {
-        this.userStatistics = userStatistics;
-    }
 
     @Override
     public String toString() {
