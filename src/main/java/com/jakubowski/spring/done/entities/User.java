@@ -1,40 +1,63 @@
-package com.jakubowski.spring.done.user.entities;
+package com.jakubowski.spring.done.entities;
 
-import com.jakubowski.spring.done.tasklists.TaskList;
+import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {
+                "username"
+        }),
+        @UniqueConstraint(columnNames = {
+                "email"
+        })
+})
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String email;
-    private String password;
-//    @OneToOne(cascade = {CascadeType.ALL}, mappedBy = "user")
-//    private ArrayList<TaskList> lists;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
-    private UserProperties userProperties;
-//    @OneToOne(cascade = {CascadeType.ALL}, mappedBy = "user")
-//    private UserStatistics userStatistics;
 
-    protected User() {}
+    @NotBlank
+    @Size(max = 15)
+    private String username;
+
+    @NaturalId
+    @NotBlank
+    @Size(max = 40)
+    @Email
+    private String email;
+
+    @NotBlank
+    @Size(max = 100)
+    private String password;
+
+    @OneToOne
+    private UserProperties userProperties;
+
+
+    public User() {}
 
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-//        this.lists = lists;
-        this.userProperties = new UserProperties("", "", false, "");
-//        this.userStatistics = userStatistics;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -61,38 +84,11 @@ public class User {
         this.password = password;
     }
 
-
-
     public UserProperties getUserProperties() {
         return userProperties;
     }
 
     public void setUserProperties(UserProperties userProperties) {
         this.userProperties = userProperties;
-    }
-
-
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        return id.equals(user.id);
-
-    }
-
-    @Override
-    public int hashCode() {
-        return id.hashCode();
     }
 }
