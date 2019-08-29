@@ -41,6 +41,9 @@ public class User {
     private String password;
 
     @OneToOne
+    private ArrayList<TodoList> todolists = new ArrayList<>();
+
+    @OneToOne
     private UserProperties userProperties;
 
 
@@ -90,5 +93,21 @@ public class User {
 
     public void setUserProperties(UserProperties userProperties) {
         this.userProperties = userProperties;
+    }
+
+    public ArrayList<TodoList> getTodolists() {
+        return todolists;
+    }
+
+    public void addTodoList(TodoList todoList) {
+        this.todolists.add(todoList);
+    }
+
+    public void deleteTodoList(TodoList todoList) {
+        this.todolists.remove(todoList);
+    }
+
+    public void deleteTodoListById(int id) {
+        this.todolists.remove(id);
     }
 }

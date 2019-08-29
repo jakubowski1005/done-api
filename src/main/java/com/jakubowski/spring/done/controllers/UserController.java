@@ -1,7 +1,10 @@
 package com.jakubowski.spring.done.controllers;
 
+import com.jakubowski.spring.done.entities.TodoList;
 import com.jakubowski.spring.done.entities.User;
 import com.jakubowski.spring.done.entities.UserProperties;
+import com.jakubowski.spring.done.payloads.ApiResponse;
+import com.jakubowski.spring.done.repositories.TodoListRepository;
 import com.jakubowski.spring.done.repositories.UserPropertiesRepository;
 import com.jakubowski.spring.done.repositories.UserRepository;
 import com.jakubowski.spring.done.security.JwtProvider;
@@ -12,7 +15,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,6 +35,9 @@ public class UserController {
 
     @Autowired
     private UserPropertiesRepository userPropertiesRepository;
+
+    @Autowired
+    private TodoListRepository todoListRepository;
 
     @GetMapping("/users")
     public List<User> getAllUsers() {
@@ -49,19 +57,19 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/users/{id}/properties")
+    @PutMapping("/users/{userId}/properties")
     @Transactional
-    public ResponseEntity<?> updateUserProperties(@PathVariable long id, @RequestBody UserProperties userProperties,
-                                                  @RequestHeader(value="Authorization") String authorizationHeader) {
+    public ResponseEntity<?> updateUserProperties(@PathVariable long userId, @RequestBody UserProperties userProperties,
+                                                  @RequestHeader(value = "Authorization") String authorizationHeader) {
 
         String token = authorizationHeader.substring(7);
-        String username = jwtProvider.getUsernameFromJWT(token);
+        String username = jwtProvider.getUsernameFromToken(token);
 
-        Optional<User> user = userRepository.findById(id);
+        Optional<User> user = userRepository.findById(userId);
 
-        if(!user.isPresent()) return ResponseEntity.noContent().build();
+        if (!user.isPresent()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        if(!user.get().getUsername().equals(username)) return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        if (!user.get().getUsername().equals(username)) return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 
         if(user.get().getUserProperties() == null) {
             user.get().setUserProperties(userProperties);
@@ -75,5 +83,53 @@ public class UserController {
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PostMapping("/users/{userId}/lists")
+    public ResponseEntity<?> createList(@PathVariable long userId, @RequestBody TodoList todoList,
+                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
+
+        String token = authorizationHeader.substring(7);
+        String username = jwtProvider.getUsernameFromToken(token);
+
+        Optional<User> user = userRepository.findById(userId);
+
+        if (!user.isPresent()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        if (!user.get().getUsername().equals(username)) return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+
+        if (user.get().getTodolists() != null) return new ResponseEntity<>(HttpStatus.CONFLICT);
+
+        user.get().addTodoList(todoList);
+        todoListRepository.save(todoList);
+
+        URI uri = ServletUriComponentsBuilder
+                    .fromCurrentRequest()
+                    .path("/{id}")
+                    .buildAndExpand(todoList.getId())
+                    .toUri();
+
+        return ResponseEntity.created(uri).body(new ApiResponse(true, "Todo list added successfully!"));
+
+    }
+
+    @DeleteMapping("/users/{userId}/lists/{listId}")
+    public ResponseEntity<?> deleteList(@PathVariable long userId, @PathVariable long listId,
+                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
+
+        String token = authorizationHeader.substring(7);
+        String username = jwtProvider.getUsernameFromToken(token);
+
+        Optional<User> user = userRepository.findById(userId);
+
+        if (!user.isPresent()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        if (!user.get().getUsername().equals(username)) return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+
+
+        todoListRepository.deleteById(listId);
+
+        return ResponseEntity.noContent().build();
+    }
+
 
 }
