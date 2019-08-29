@@ -5,6 +5,7 @@ import com.jakubowski.spring.done.enums.Color;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "todolists")
@@ -21,6 +22,10 @@ public class TodoList {
     @NotBlank
     private Color color;
 
+    @OneToMany
+    private ArrayList<Todo> todos = new ArrayList<>();
+
+    private Long completeLevel;
 
     public TodoList() {
     }
@@ -48,5 +53,51 @@ public class TodoList {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    public ArrayList<Todo> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(ArrayList<Todo> todos) {
+        this.todos = todos;
+    }
+
+    public void addTodo(Todo todo) {
+        this.todos.add(todo);
+    }
+
+    public void delete(Todo todo) {
+        this.todos.remove(todo);
+    }
+
+    public void deleteById(int id) {
+        this.todos.remove(id);
+    }
+
+    public void updateTodo(int id, Todo newTodo) {
+        this.todos.remove(id);
+        this.todos.add(newTodo);
+    }
+
+    public Long getCompleteLevel() {
+        return completeLevel;
+    }
+
+    public void setCompleteLevel(Long completeLevel) {
+        this.completeLevel = completeLevel;
+    }
+
+    public Long calculateCompleteLevel() {
+
+        if(todos.size() == 0) return 0L;
+
+        int completedTodos = 0;
+
+        for (Todo todo : todos) {
+            if(todo.isCompleted()) completedTodos++;
+        }
+
+        return  Long.valueOf(completedTodos/todos.size());
     }
 }
