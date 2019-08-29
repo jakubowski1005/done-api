@@ -4,6 +4,7 @@ import com.jakubowski.spring.done.entities.User;
 import com.jakubowski.spring.done.entities.UserProperties;
 import com.jakubowski.spring.done.repositories.UserPropertiesRepository;
 import com.jakubowski.spring.done.repositories.UserRepository;
+import com.jakubowski.spring.done.security.JwtProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ import java.util.Optional;
 public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Autowired
+    private JwtProvider jwtProvider;
 
     @Autowired
     private UserRepository userRepository;
@@ -47,11 +51,17 @@ public class UserController {
 
     @PutMapping("/users/{id}/properties")
     @Transactional
-    public ResponseEntity<?> updateUserProperties(@PathVariable long id, @RequestBody UserProperties userProperties) {
+    public ResponseEntity<?> updateUserProperties(@PathVariable long id, @RequestBody UserProperties userProperties,
+                                                  @RequestHeader(value="Authorization") String authorizationHeader) {
+
+        String token = authorizationHeader.substring(7);
+        String username = jwtProvider.getUsernameFromJWT(token);
 
         Optional<User> user = userRepository.findById(id);
 
         if(!user.isPresent()) return ResponseEntity.noContent().build();
+
+        if(!user.get().getUsername().equals(username)) return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 
         if(user.get().getUserProperties() == null) {
             user.get().setUserProperties(userProperties);

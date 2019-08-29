@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/WebMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/exceptions/ApplicationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/exceptions/BadRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/exceptions/ResourcesNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/ApiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/JwtAuthenticationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignInRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignUpRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserPropertiesRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/CustomUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtUserPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UnauthorizedResponseAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/TestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tasklists/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tasklists/TaskList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tasklists/TaskListRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tasklists/TaskRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/user/controllers/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/user/controllers/UserPropertiesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/user/entities/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/user/entities/UserProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/user/entities/UserStatistics.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/user/repositories/UserPropertiesRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/user/repositories/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/user/services/UserPropertiesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/user/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -145,8 +108,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+            <state relative-caret-position="367">
+              <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#682#683#0" expanded="true" />
@@ -457,12 +420,12 @@
       <option name="presentableId" value="Default" />
       <updated>1565355362419</updated>
       <workItem from="1565355367603" duration="41313000" />
-      <workItem from="1566852937746" duration="23013000" />
+      <workItem from="1566852937746" duration="24460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64326000" />
+    <option name="totallyTimeSpent" value="65773000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1063,8 +1026,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+        <state relative-caret-position="367">
+          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#682#683#0" expanded="true" />
