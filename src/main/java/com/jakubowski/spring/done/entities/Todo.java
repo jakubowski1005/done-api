@@ -2,10 +2,7 @@ package com.jakubowski.spring.done.entities;
 
 import com.jakubowski.spring.done.enums.Priority;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -26,6 +23,9 @@ public class Todo {
 
     @NotBlank
     private Priority priority;
+
+    @ManyToOne
+    private TodoList todoList;
 
     public Todo() {
     }
@@ -70,5 +70,13 @@ public class Todo {
 
     public void setPriority(Priority priority) {
         this.priority = priority;
+    }
+
+    public TodoList getTodoList() {
+        return todoList;
+    }
+
+    public void setTodoList(TodoList todoList) {
+        this.todoList = todoList;
     }
 }

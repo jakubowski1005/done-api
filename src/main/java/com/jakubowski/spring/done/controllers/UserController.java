@@ -1,12 +1,11 @@
 package com.jakubowski.spring.done.controllers;
 
-import com.jakubowski.spring.done.entities.TodoList;
 import com.jakubowski.spring.done.entities.User;
 import com.jakubowski.spring.done.entities.UserProperties;
-import com.jakubowski.spring.done.payloads.ApiResponse;
-import com.jakubowski.spring.done.repositories.TodoListRepository;
+import com.jakubowski.spring.done.entities.UserStatistics;
 import com.jakubowski.spring.done.repositories.UserPropertiesRepository;
 import com.jakubowski.spring.done.repositories.UserRepository;
+import com.jakubowski.spring.done.repositories.UserStatisticsRepository;
 import com.jakubowski.spring.done.security.JwtProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,11 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import java.net.URI;
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -37,23 +31,47 @@ public class UserController {
     private UserPropertiesRepository userPropertiesRepository;
 
     @Autowired
-    private TodoListRepository todoListRepository;
+    private UserStatisticsRepository userStatisticsRepository;
 
-    @GetMapping("/users")
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    @GetMapping("/users/{userId}")
+    public User getUserById(@PathVariable long userId, @RequestHeader(value = "Authorization") String authorizationHeader) {
+
+        if(!jwtProvider.isUserAuthorized(userId, authorizationHeader)) return null;
+
+        return userRepository.findById(userId).get();
     }
 
-    @GetMapping("/users/{id}")
-    public User getUserById(@PathVariable long id) {
+    @GetMapping("/users/{userId}/properties")
+    public UserProperties getUserProperties(@PathVariable long userId,
+                                            @RequestHeader(value = "Authorization") String authorizationHeader) {
 
-        if(userRepository.findById(id).isPresent()) return userRepository.findById(id).get();
-        return null;
+        if(!jwtProvider.isUserAuthorized(userId, authorizationHeader)) {
+           return null;
+        }
+
+        return userRepository.findById(userId).get().getUserProperties();
     }
 
-    @DeleteMapping("/users/{id}")
-    public ResponseEntity<?> deleteUser(long id) {
-        userRepository.deleteById(id);
+    @GetMapping("/users/{userId}/statistics")
+    public UserStatistics getUserStatistics(@PathVariable long userId,
+                                            @RequestHeader(value = "Authorization") String authorizationHeader) {
+
+        if(!jwtProvider.isUserAuthorized(userId, authorizationHeader)) {
+            return null;
+        }
+
+        return userRepository.findById(userId).get().getUserStatistics();
+    }
+
+    @DeleteMapping("/users/{userId}")
+    public ResponseEntity<?> deleteUser(@PathVariable long userId,
+                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
+
+        if(!jwtProvider.isUserAuthorized(userId, authorizationHeader)) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+
+        userRepository.deleteById(userId);
         return ResponseEntity.noContent().build();
     }
 
@@ -62,74 +80,46 @@ public class UserController {
     public ResponseEntity<?> updateUserProperties(@PathVariable long userId, @RequestBody UserProperties userProperties,
                                                   @RequestHeader(value = "Authorization") String authorizationHeader) {
 
-        String token = authorizationHeader.substring(7);
-        String username = jwtProvider.getUsernameFromToken(token);
+        if(!jwtProvider.isUserAuthorized(userId, authorizationHeader)) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
 
-        Optional<User> user = userRepository.findById(userId);
+        User user = userRepository.findById(userId).get();
 
-        if (!user.isPresent()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-        if (!user.get().getUsername().equals(username)) return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-
-        if(user.get().getUserProperties() == null) {
-            user.get().setUserProperties(userProperties);
+        if(user.getUserProperties() == null) {
+            user.setUserProperties(userProperties);
             userPropertiesRepository.save(userProperties);
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
 
-        userPropertiesRepository.delete(user.get().getUserProperties());
-        user.get().setUserProperties(userProperties);
+        userPropertiesRepository.delete(user.getUserProperties());
+        user.setUserProperties(userProperties);
         userPropertiesRepository.save(userProperties);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("/users/{userId}/lists")
-    public ResponseEntity<?> createList(@PathVariable long userId, @RequestBody TodoList todoList,
-                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
+    @PutMapping("/users/{userId}/statistics")
+    @Transactional
+    public ResponseEntity<?> updateUserStatistics(@PathVariable long userId, @RequestBody UserStatistics userStatistics,
+                                                  @RequestHeader(value = "Authorization") String authorizationHeader) {
 
-        String token = authorizationHeader.substring(7);
-        String username = jwtProvider.getUsernameFromToken(token);
+        if(!jwtProvider.isUserAuthorized(userId, authorizationHeader)) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
 
-        Optional<User> user = userRepository.findById(userId);
+        User user = userRepository.findById(userId).get();
 
-        if (!user.isPresent()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        if(user.getUserStatistics() == null) {
+            user.setUserStatistics(userStatistics);
+            userStatisticsRepository.save(userStatistics);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }
 
-        if (!user.get().getUsername().equals(username)) return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        userStatisticsRepository.delete(user.getUserStatistics());
+        user.setUserStatistics(userStatistics);
+        userStatisticsRepository.save(userStatistics);
 
-        if (user.get().getTodolists() != null) return new ResponseEntity<>(HttpStatus.CONFLICT);
-
-        user.get().addTodoList(todoList);
-        todoListRepository.save(todoList);
-
-        URI uri = ServletUriComponentsBuilder
-                    .fromCurrentRequest()
-                    .path("/{id}")
-                    .buildAndExpand(todoList.getId())
-                    .toUri();
-
-        return ResponseEntity.created(uri).body(new ApiResponse(true, "Todo list added successfully!"));
-
+        return new ResponseEntity<>(HttpStatus.OK);
     }
-
-    @DeleteMapping("/users/{userId}/lists/{listId}")
-    public ResponseEntity<?> deleteList(@PathVariable long userId, @PathVariable long listId,
-                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
-
-        String token = authorizationHeader.substring(7);
-        String username = jwtProvider.getUsernameFromToken(token);
-
-        Optional<User> user = userRepository.findById(userId);
-
-        if (!user.isPresent()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-        if (!user.get().getUsername().equals(username)) return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-
-
-        todoListRepository.deleteById(listId);
-
-        return ResponseEntity.noContent().build();
-    }
-
-
 }

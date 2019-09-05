@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "todolists")
@@ -23,9 +24,14 @@ public class TodoList {
     private Color color;
 
     @OneToMany
-    private ArrayList<Todo> todos = new ArrayList<>();
+    private List<Todo> todos = new ArrayList<>();
 
+    @ManyToOne
+    private User user;
+
+    @NotBlank
     private Long completeLevel;
+
 
     public TodoList() {
     }
@@ -55,7 +61,19 @@ public class TodoList {
         this.color = color;
     }
 
-    public ArrayList<Todo> getTodos() {
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Todo> getTodos() {
         return todos;
     }
 
@@ -64,6 +82,8 @@ public class TodoList {
     }
 
     public void addTodo(Todo todo) {
+
+        todo.setTodoList(this);
         this.todos.add(todo);
     }
 

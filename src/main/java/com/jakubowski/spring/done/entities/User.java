@@ -7,9 +7,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
@@ -40,11 +39,14 @@ public class User {
     @Size(max = 100)
     private String password;
 
-    @OneToOne
-    private ArrayList<TodoList> todolists = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+    private List<TodoList> todolists = new ArrayList<>();
 
     @OneToOne
     private UserProperties userProperties;
+
+    @OneToOne
+    private UserStatistics userStatistics;
 
 
     public User() {}
@@ -95,11 +97,20 @@ public class User {
         this.userProperties = userProperties;
     }
 
-    public ArrayList<TodoList> getTodolists() {
+    public UserStatistics getUserStatistics() {
+        return userStatistics;
+    }
+
+    public void setUserStatistics(UserStatistics userStatistics) {
+        this.userStatistics = userStatistics;
+    }
+
+    public List<TodoList> getTodolists() {
         return todolists;
     }
 
     public void addTodoList(TodoList todoList) {
+        todoList.setUser(this);
         this.todolists.add(todoList);
     }
 
@@ -109,5 +120,25 @@ public class User {
 
     public void deleteTodoListById(int id) {
         this.todolists.remove(id);
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (!id.equals(user.id)) return false;
+        return username.equals(user.username);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id.hashCode();
+        result = 31 * result + username.hashCode();
+        return result;
     }
 }

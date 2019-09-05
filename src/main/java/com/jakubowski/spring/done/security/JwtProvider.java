@@ -1,9 +1,12 @@
 package com.jakubowski.spring.done.security;
 
+import com.jakubowski.spring.done.entities.User;
+import com.jakubowski.spring.done.repositories.UserRepository;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.impl.DefaultClock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,6 +26,9 @@ public class JwtProvider implements Serializable {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private Clock clock = DefaultClock.INSTANCE;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Value("${jwt.signing.key.secret}")
     private String secret;
@@ -136,5 +142,20 @@ public class JwtProvider implements Serializable {
 
     private Date calculateExpirationDate(Date createdDate) {
         return new Date(createdDate.getTime() + expiration * 1000);
+    }
+
+    public boolean isUserAuthorized(long userId, String authorizationHeader) {
+
+        String token = authorizationHeader.substring(7);
+        String username = getUsernameFromJWT(token);
+
+        if(!userRepository.findByUsername(username).isPresent() || !userRepository.existsById(userId)) {
+            return false;
+        }
+
+        User userFromUserId = userRepository.findByUsername(username).get();
+        User userFromToken = userRepository.findById(userId).get();
+
+        return userFromToken.equals(userFromUserId);
     }
 }
