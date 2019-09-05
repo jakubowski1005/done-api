@@ -143,19 +143,4 @@ public class JwtProvider implements Serializable {
     private Date calculateExpirationDate(Date createdDate) {
         return new Date(createdDate.getTime() + expiration * 1000);
     }
-
-    public boolean isUserAuthorized(long userId, String authorizationHeader) {
-
-        String token = authorizationHeader.substring(7);
-        String username = getUsernameFromJWT(token);
-
-        if(!userRepository.findByUsername(username).isPresent() || !userRepository.existsById(userId)) {
-            return false;
-        }
-
-        User userFromUserId = userRepository.findByUsername(username).get();
-        User userFromToken = userRepository.findById(userId).get();
-
-        return userFromToken.equals(userFromUserId);
-    }
 }
