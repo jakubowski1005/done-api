@@ -31,6 +31,9 @@ public class TodoListService {
     @Autowired
     private TodoListRepository todoListRepository;
 
+    @Autowired
+    private StatsCalculator statsCalculator;
+
 
     public List<TodoList> getAllLists(long userId, String authorizationHeader) {
 
@@ -72,6 +75,7 @@ public class TodoListService {
                 .buildAndExpand(todoList.getId())
                 .toUri();
 
+        statsCalculator.recalculateStats(userId);
         return ResponseEntity.created(uri).body(new ApiResponse(true, "Todo list added successfully!"));
 
     }
@@ -95,6 +99,7 @@ public class TodoListService {
         user.addTodoList(todoList);
         todoListRepository.save(todoList);
 
+        statsCalculator.recalculateStats(userId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -109,6 +114,7 @@ public class TodoListService {
         todoListRepository.delete(todoList);
         userRepository.findById(userId).get().deleteTodoList(todoList);
 
+        statsCalculator.recalculateStats(userId);
         return ResponseEntity.noContent().build();
     }
 }

@@ -2,7 +2,8 @@ package com.jakubowski.spring.done.services;
 
 import com.jakubowski.spring.done.entities.Todo;
 import com.jakubowski.spring.done.entities.TodoList;
-import com.jakubowski.spring.done.repositories.TodoListRepository;
+import com.jakubowski.spring.done.entities.User;
+import com.jakubowski.spring.done.entities.UserStatistics;
 import com.jakubowski.spring.done.repositories.TodoRepository;
 import com.jakubowski.spring.done.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +21,18 @@ public class StatsCalculator {
     private UserRepository userRepository;
 
     @Autowired
-    private TodoListRepository todoListRepository;
-
-    @Autowired
     private TodoRepository todoRepository;
+
+    public boolean recalculateStats(long userId) {
+        if (!userRepository.existsById(userId)) return false;
+        User user = userRepository.getOne(userId);
+        UserStatistics userStatistics = user.getUserStatistics();
+        userStatistics.setCompletedTasks(calculateCompletedTasks(userId));
+        userStatistics.setCompletedLists(calculateActiceLists(userId));
+        userStatistics.setActiveLists(calculateActiceLists(userId));
+        userStatistics.setDaysWithApp(calculateDaysWithApp(userId));
+        return true;
+    }
 
     public int calculateCompletedLists(long userId) {
 

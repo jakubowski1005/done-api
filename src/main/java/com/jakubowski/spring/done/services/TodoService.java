@@ -30,6 +30,9 @@ public class TodoService {
     @Autowired
     private TodoRepository todoRepository;
 
+    @Autowired
+    private StatsCalculator statsCalculator;
+
 
     public List<Todo> getAllTodosFromList(long userId, long listId, String authorizationHeader) {
         if (!authService.isUserAuthorized(userId, authorizationHeader)) return null;
@@ -59,6 +62,7 @@ public class TodoService {
                 .buildAndExpand(todo.getId())
                 .toUri();
 
+        statsCalculator.recalculateStats(userId);
         return ResponseEntity.created(uri).body(new ApiResponse(true, "Todo added successfully!"));
     }
 
@@ -80,6 +84,7 @@ public class TodoService {
         todoList.addTodo(todo);
         todoRepository.save(todo);
 
+        statsCalculator.recalculateStats(userId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -94,6 +99,7 @@ public class TodoService {
         todoRepository.delete(todo);
         todoListRepository.getOne(listId).delete(todo);
 
+        statsCalculator.recalculateStats(userId);
         return ResponseEntity.noContent().build();
 
     }
