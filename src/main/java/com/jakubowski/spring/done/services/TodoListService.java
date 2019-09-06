@@ -1,5 +1,6 @@
 package com.jakubowski.spring.done.services;
 
+import com.jakubowski.spring.done.entities.Todo;
 import com.jakubowski.spring.done.entities.TodoList;
 import com.jakubowski.spring.done.entities.User;
 import com.jakubowski.spring.done.payloads.ApiResponse;
@@ -116,5 +117,20 @@ public class TodoListService {
 
         statsCalculator.recalculateStats(userId);
         return ResponseEntity.noContent().build();
+    }
+
+    public double calculateCompleteLevel(long listId) {
+
+        List<Todo> todos = todoListRepository.getOne(listId).getTodos();
+
+        if(todos.size() == 0) return 0L;
+
+        int completedTodos = 0;
+
+        for (Todo todo : todos) {
+            if(todo.isCompleted()) completedTodos++;
+        }
+
+        return completedTodos/todos.size();
     }
 }

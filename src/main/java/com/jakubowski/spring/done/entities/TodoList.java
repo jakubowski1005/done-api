@@ -33,7 +33,7 @@ public class TodoList {
     private User user;
 
     @NotNull
-    private Long progress;
+    private double progress;
 
 
     public TodoList() {
@@ -103,24 +103,11 @@ public class TodoList {
         this.todos.add(newTodo);
     }
 
-    public Long getProgress() {
+    public double getProgress() {
         return progress;
     }
 
-    public void setProgress(Long progress) {
+    public void setProgress(double progress) {
         this.progress = progress;
-    }
-
-    public Long calculateCompleteLevel() {
-
-        if(todos.size() == 0) return 0L;
-
-        int completedTodos = 0;
-
-        for (Todo todo : todos) {
-            if(todo.isCompleted()) completedTodos++;
-        }
-
-        return  Long.valueOf(completedTodos/todos.size());
     }
 }

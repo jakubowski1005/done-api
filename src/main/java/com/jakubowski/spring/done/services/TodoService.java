@@ -33,6 +33,8 @@ public class TodoService {
     @Autowired
     private StatsCalculator statsCalculator;
 
+    @Autowired
+    private TodoListService todoListService;
 
     public List<Todo> getAllTodosFromList(long userId, long listId, String authorizationHeader) {
         if (!authService.isUserAuthorized(userId, authorizationHeader)) return null;
@@ -53,7 +55,8 @@ public class TodoService {
     public ResponseEntity<?> createTodo(long userId, long listId, Todo todo, String authorizationHeader) {
         if(!authService.isUserAuthorized(userId, authorizationHeader)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 
-        todoListRepository.getOne(listId).addTodo(todo);
+        TodoList list = todoListRepository.getOne(listId);
+        list.addTodo(todo);
         todoRepository.save(todo);
 
         URI uri = ServletUriComponentsBuilder
@@ -62,6 +65,8 @@ public class TodoService {
                 .buildAndExpand(todo.getId())
                 .toUri();
 
+        double progress = todoListService.calculateCompleteLevel(listId);
+        list.setProgress(progress);
         statsCalculator.recalculateStats(userId);
         return ResponseEntity.created(uri).body(new ApiResponse(true, "Todo added successfully!"));
     }
