@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserPropertiesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserPropertiesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserStatisticsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserStatisticsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,24 +21,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtProvider.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1730">
-              <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+            <state relative-caret-position="285">
+              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="104" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1048#1075#1" expanded="true" />
-                <element signature="e#1116#1152#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" selection-start-line="24" selection-end-line="132" selection-end-column="5" />
+            <state relative-caret-position="285">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,10 +45,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="18" column="100" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,8 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tasklists/TaskListRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tasklists/TaskRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/TestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/registerTest/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/registerTest/Role.java" />
@@ -117,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/enums/Priority.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/enums/Color.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" />
@@ -132,7 +126,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserPropertiesRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoListRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoController.java" />
       </list>
     </option>
   </component>
@@ -144,8 +141,6 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1440" />
-    <option name="y" value="-918" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -217,6 +212,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="done" type="462c0819:PsiDirectoryNode" />
               <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="done" type="b2602c69:ProjectViewProjectNode" />
+              <item name="done-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="done" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="done" type="b2602c69:ProjectViewProjectNode" />
@@ -324,12 +328,12 @@
       <updated>1565355362419</updated>
       <workItem from="1565355367603" duration="41313000" />
       <workItem from="1566852937746" duration="33150000" />
-      <workItem from="1567646691937" duration="10472000" />
+      <workItem from="1567646691937" duration="15225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84935000" />
+    <option name="totallyTimeSpent" value="89688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -341,10 +345,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-918" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21458998" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28826895" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -360,7 +364,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" visible="true" weight="0.2069307" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.25180724" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.20722891" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32891566" />
@@ -383,8 +387,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/registerTest/RoleRepository.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/registerTest/User.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/registerTest/Role.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tokens/InMemoryUsersList.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tokens/User.java" />
@@ -807,8 +809,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1730">
-          <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+        <state relative-caret-position="1157">
+          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1048#1075#1" expanded="true" />
@@ -817,20 +819,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="132" selection-end-column="5" />
+        <state relative-caret-position="485">
+          <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        <state relative-caret-position="285">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="100" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

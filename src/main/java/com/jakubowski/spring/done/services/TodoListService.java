@@ -5,7 +5,6 @@ import com.jakubowski.spring.done.entities.User;
 import com.jakubowski.spring.done.payloads.ApiResponse;
 import com.jakubowski.spring.done.repositories.TodoListRepository;
 import com.jakubowski.spring.done.repositories.UserRepository;
-import com.jakubowski.spring.done.security.JwtProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +85,7 @@ public class TodoListService {
 
         User user = userRepository.findById(userId).get();
 
-        if (user.getTodolists() != null || !todoListRepository.findById(listId).isPresent()) {
+        if (user.getTodolists() == null || !todoListRepository.findById(listId).isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
