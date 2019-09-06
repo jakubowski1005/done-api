@@ -14,15 +14,19 @@ public class UserStatistics {
     @Id
     @GeneratedValue
     private Long id;
-
-    @NotNull
-    private Integer completedTasks;
+    private int completedTasks;
+    private int completedLists;
+    private int daysWithApp;
+    private int activeLists;
 
     public UserStatistics() {
     }
 
-    public UserStatistics(@NotBlank Integer completedTasks) {
+    public UserStatistics(int completedTasks, int completedLists, int daysWithApp, int activeLists) {
         this.completedTasks = completedTasks;
+        this.completedLists = completedLists;
+        this.daysWithApp = daysWithApp;
+        this.activeLists = activeLists;
     }
 
     public Long getId() {
@@ -39,5 +43,33 @@ public class UserStatistics {
 
     public void setCompletedTasks(Integer completedTasks) {
         this.completedTasks = completedTasks;
+    }
+
+    public void setCompletedTasks(int completedTasks) {
+        this.completedTasks = completedTasks;
+    }
+
+    public int getCompletedLists() {
+        return completedLists;
+    }
+
+    public void setCompletedLists(int completedLists) {
+        this.completedLists = completedLists;
+    }
+
+    public int getDaysWithApp() {
+        return daysWithApp;
+    }
+
+    public void setDaysWithApp(int daysWithApp) {
+        this.daysWithApp = daysWithApp;
+    }
+
+    public int getActiveLists() {
+        return activeLists;
+    }
+
+    public void setActiveLists(int activeLists) {
+        this.activeLists = activeLists;
     }
 }

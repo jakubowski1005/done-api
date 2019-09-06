@@ -16,7 +16,7 @@ public class TodoController {
     @Autowired
     private TodoService todoService;
 
-    @GetMapping("/users/{userId}/lists{listId}/todos")
+    @GetMapping("/users/{userId}/lists/{listId}/todos")
     public List<Todo> getAllTodos(@PathVariable long userId, @PathVariable long listId,
                                   @RequestHeader(value = "Authorization") String authorizationHeader) {
         return todoService.getAllTodosFromList(userId, listId, authorizationHeader);

@@ -1,9 +1,11 @@
 package com.jakubowski.spring.done.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jakubowski.spring.done.enums.Priority;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -18,19 +20,20 @@ public class Todo {
     @Size(max = 30)
     private String description;
 
-    @NotBlank
-    private Boolean isDone;
+    @NotNull
+    private boolean isDone;
 
-    @NotBlank
+    @NotNull
     private Priority priority;
 
     @ManyToOne
+    @JsonIgnore
     private TodoList todoList;
 
     public Todo() {
     }
 
-    public Todo(@NotBlank @Size(max = 30) String description, @NotBlank Boolean isDone, @NotBlank Priority priority) {
+    public Todo(String description, Boolean isDone, Priority priority) {
         this.description = description;
         this.isDone = isDone;
         this.priority = priority;

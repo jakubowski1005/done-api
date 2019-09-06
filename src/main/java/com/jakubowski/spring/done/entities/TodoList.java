@@ -1,9 +1,11 @@
 package com.jakubowski.spring.done.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jakubowski.spring.done.enums.Color;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,17 +22,18 @@ public class TodoList {
     @Size(max = 40)
     private String listname;
 
-    @NotBlank
+    @NotNull
     private Color color;
 
     @OneToMany
     private List<Todo> todos = new ArrayList<>();
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 
-    @NotBlank
-    private Long completeLevel;
+    @NotNull
+    private Long progress;
 
 
     public TodoList() {
@@ -100,12 +103,12 @@ public class TodoList {
         this.todos.add(newTodo);
     }
 
-    public Long getCompleteLevel() {
-        return completeLevel;
+    public Long getProgress() {
+        return progress;
     }
 
-    public void setCompleteLevel(Long completeLevel) {
-        this.completeLevel = completeLevel;
+    public void setProgress(Long progress) {
+        this.progress = progress;
     }
 
     public Long calculateCompleteLevel() {
