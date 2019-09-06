@@ -1,12 +1,16 @@
 package com.jakubowski.spring.done.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -48,6 +52,8 @@ public class User {
     @OneToOne
     private UserStatistics userStatistics;
 
+    @JsonIgnore
+    private LocalDate creationDate = LocalDate.now();
 
     public User() {}
 
@@ -122,6 +128,9 @@ public class User {
         this.todolists.remove(id);
     }
 
+    public LocalDate getCreationDate() {
+        return creationDate;
+    }
 
     @Override
     public boolean equals(Object o) {
