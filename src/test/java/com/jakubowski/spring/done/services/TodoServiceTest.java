@@ -51,11 +51,10 @@ public class TodoServiceTest {
         TodoList list = user.getTodolists().get(0);
 
         //when
-        when(authService.isUserAuthorized(anyLong(), anyString())).thenReturn(true);
         when(todoListRepository.findById(anyLong())).thenReturn(Optional.of(list));
         when(todoListRepository.getOne(anyLong())).thenReturn(list);
 
-        List<Todo> todos = todoService.getAllTodosFromList(user.getId(), list.getId(), "header");
+        List<Todo> todos = todoService.getAllTodosFromList(list.getId());
 
         //then
         assertThat(todos, equalTo(list.getTodos()));
@@ -71,13 +70,12 @@ public class TodoServiceTest {
         todo.setId(1L);
 
         //when
-        when(authService.isUserAuthorized(anyLong(), anyString())).thenReturn(true);
         when(todoListRepository.findById(anyLong())).thenReturn(Optional.of(list));
         when(todoListRepository.getOne(anyLong())).thenReturn(list);
         when(todoRepository.findById(anyLong())).thenReturn(Optional.of(todo));
         when(todoRepository.getOne(anyLong())).thenReturn(todo);
 
-        Todo found = todoService.getTodoById(user.getId(), list.getId(), todo.getId(), "header");
+        Todo found = todoService.getTodoById(list.getId(), todo.getId());
 
         //then
         assertThat(found, equalTo(todo));
@@ -93,13 +91,12 @@ public class TodoServiceTest {
         Todo newTodo = new Todo();
 
         //when
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
         when(todoListRepository.getOne(anyLong())).thenReturn(list);
         when(todoListRepository.findById(anyLong())).thenReturn(Optional.of(list));
         when(todoRepository.findById(anyLong())).thenReturn(Optional.of(oldTodo));
         when(todoRepository.getOne(anyLong())).thenReturn(oldTodo);
 
-        ResponseEntity res = todoService.updateTodo(user.getId(), list.getId(), oldTodo.getId(), newTodo, "header");
+        ResponseEntity res = todoService.updateTodo(user.getId(), list.getId(), oldTodo.getId(), newTodo);
 
         //then
         assertAll(

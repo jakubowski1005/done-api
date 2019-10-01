@@ -49,9 +49,8 @@ public class TodoListServiceTest {
 
         //when
         when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
 
-        List<TodoList> lists = todoListService.getAllLists(user.getId(), "header");
+        List<TodoList> lists = todoListService.getAllLists(user.getId());
 
         //then
         assertThat(lists, is(equalTo(user.getTodolists())));
@@ -66,10 +65,9 @@ public class TodoListServiceTest {
         TodoList list = user.getTodolists().get(0);
 
         //when
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
         when(todoListRepository.findById(any(Long.class))).thenReturn(Optional.of(user.getTodolists().get(0)));
 
-        TodoList todoList = todoListService.getListById(user.getId(), list.getId(), "header");
+        TodoList todoList = todoListService.getListById(list.getId());
 
         //then
         assertThat(todoList, is(equalTo(list)));
@@ -84,11 +82,10 @@ public class TodoListServiceTest {
         TodoList newList = new TodoList();
 
         //when
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
         when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
         when(todoListRepository.findById(any(Long.class))).thenReturn(Optional.of(user.getTodolists().get(0)));
 
-        ResponseEntity res = todoListService.updateList(user.getId(), oldList.getId(), newList, "header");
+        ResponseEntity res = todoListService.updateList(user.getId(), oldList.getId(), newList);
 
         //then
         assertAll(

@@ -48,9 +48,8 @@ public class UserServiceTest {
 
         //when
         when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
 
-        User found = userService.getUserById(user.getId(),"header");
+        User found = userService.getUserById(user.getId());
 
         //then
         assertThat(found, equalTo(user));
@@ -65,9 +64,8 @@ public class UserServiceTest {
 
         //when
         when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
 
-        UserProperties foundProperties = userService.getUserProperties(user.getId(), "header");
+        UserProperties foundProperties = userService.getUserProperties(user.getId());
 
         //then
         assertThat(foundProperties, equalTo(userProperties));
@@ -82,9 +80,8 @@ public class UserServiceTest {
 
         //when
         when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
 
-        ResponseEntity res = userService.updateUserProperties(user.getId(), new UserProperties(), "header");
+        ResponseEntity res = userService.updateUserProperties(user.getId(), new UserProperties());
 
         //then
         assertAll(
@@ -102,9 +99,8 @@ public class UserServiceTest {
 
         //when
         when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
 
-        ResponseEntity res = userService.updateUserStatistics(user.getId(), new UserStatistics(), "header");
+        ResponseEntity res = userService.updateUserStatistics(user.getId(), new UserStatistics());
 
         //then
         assertAll(
@@ -122,9 +118,8 @@ public class UserServiceTest {
 
         //when
         when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
 
-        ResponseEntity res = userService.updateUserProperties(user.getId(), new UserProperties(), "header");
+        ResponseEntity res = userService.updateUserProperties(user.getId(), new UserProperties());
 
         //then
         assertAll(
@@ -143,9 +138,8 @@ public class UserServiceTest {
 
         //when
         when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
-        when(authService.isUserAuthorized(any(Long.class), any(String.class))).thenReturn(true);
 
-        ResponseEntity res = userService.updateUserStatistics(user.getId(), new UserStatistics(), "header");
+        ResponseEntity res = userService.updateUserStatistics(user.getId(), new UserStatistics());
 
         //then
         assertAll(
