@@ -67,7 +67,7 @@ public class TodoListService {
         if(!authService.isUserAuthorized(userId, authorizationHeader)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 
         Optional<User> user = userRepository.findById(userId);
-        user.get().addTodoList(todoList);
+        user.get().getTodolists().add(todoList);
         todoListRepository.save(todoList);
 
         URI uri = ServletUriComponentsBuilder
@@ -77,7 +77,7 @@ public class TodoListService {
                 .toUri();
 
         statsCalculator.recalculateStats(userId);
-        return ResponseEntity.created(uri).body(new ApiResponse(true, "Todo list added successfully!"));
+        return new ResponseEntity<>(new ApiResponse(true, "Todo list added successfully!"), HttpStatus.CREATED);
 
     }
 
@@ -95,9 +95,9 @@ public class TodoListService {
         }
 
         TodoList oldTodoList = todoListRepository.findById(listId).get();
-        user.deleteTodoList(oldTodoList);
+        user.getTodolists().remove(oldTodoList);
         todoListRepository.delete(oldTodoList);
-        user.addTodoList(todoList);
+        user.getTodolists().add(todoList);
         todoListRepository.save(todoList);
 
         statsCalculator.recalculateStats(userId);
@@ -113,7 +113,7 @@ public class TodoListService {
 
         TodoList todoList = todoListRepository.getOne(listId);
         todoListRepository.delete(todoList);
-        userRepository.findById(userId).get().deleteTodoList(todoList);
+        userRepository.findById(userId).get().getTodolists().remove(todoList);
 
         statsCalculator.recalculateStats(userId);
         return ResponseEntity.noContent().build();
@@ -125,12 +125,11 @@ public class TodoListService {
 
         if(todos.size() == 0) return 0L;
 
-        int completedTodos = 0;
+        double completedTodos = 0;
 
         for (Todo todo : todos) {
-            if(todo.isCompleted()) completedTodos++;
+            if(todo.isDone()) completedTodos++;
         }
-
-        return completedTodos/todos.size();
+        return (completedTodos/todos.size());
     }
 }

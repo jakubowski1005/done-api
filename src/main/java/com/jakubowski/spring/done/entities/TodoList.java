@@ -2,6 +2,8 @@ package com.jakubowski.spring.done.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jakubowski.spring.done.enums.Color;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "todolists")
+@Data
+@NoArgsConstructor
 public class TodoList {
 
     @Id
@@ -32,57 +36,6 @@ public class TodoList {
     @JsonIgnore
     private User user;
 
-    @NotNull
-    private double progress;
-
-
-    public TodoList() {
-    }
-
-    public TodoList(String listname, Color color) {
-        this.listname = listname;
-        this.color = color;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getListname() {
-        return listname;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setListname(String listname) {
-        this.listname = listname;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public List<Todo> getTodos() {
-        return todos;
-    }
-
-    public void setTodos(ArrayList<Todo> todos) {
-        this.todos = todos;
-    }
 
     public void addTodo(Todo todo) {
 
@@ -94,20 +47,4 @@ public class TodoList {
         this.todos.remove(todo);
     }
 
-    public void deleteById(int id) {
-        this.todos.remove(id);
-    }
-
-    public void updateTodo(int id, Todo newTodo) {
-        this.todos.remove(id);
-        this.todos.add(newTodo);
-    }
-
-    public double getProgress() {
-        return progress;
-    }
-
-    public void setProgress(double progress) {
-        this.progress = progress;
-    }
 }

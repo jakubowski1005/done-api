@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/UserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/repositories/UserRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/resources/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/AuthServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/StatsCalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/TodoListServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/TodoServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/DoneApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/DoneApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,10 +36,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/CustomUserDetailsService.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="20" column="96" selection-start-line="20" selection-start-column="96" selection-end-line="20" selection-end-column="96" />
+            <state relative-caret-position="498">
+              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,10 +57,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtAuthenticationFilter.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="555">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,11 +68,44 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/resources/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="61" column="68" lean-forward="true" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
+            <state relative-caret-position="405">
+              <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,6 +121,7 @@
         <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -79,19 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/registerTest/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/registerTest/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/registerTest/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/registerTest/RoleRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tokens/JsonWebToken.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tokens/InMemoryUsersList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tokens/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tokens/WebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tokens/UnAuthorizedResponseAuthenticationEntryPoint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/tokens/TokenAuthorizationOncePerRequestFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/Roles.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/CustomUserDetailservice.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UnauthorizedResponseAuthenticationEntryPoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignInRequest.java" />
@@ -104,32 +149,45 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/exceptions/ResourcesNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtUserPrincipal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/enums/Priority.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/enums/Color.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserStatisticsRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserPropertiesRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserProperties.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoListRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserStatistics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtAuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/Data.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/DoneApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/StatsCalculatorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/UserServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/TodoListServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/TodoServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/AuthServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/application.yaml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/repositories/UserRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/Controllers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/JUnitPlatform.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/UserControllerTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/resources/Data.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java" />
       </list>
     </option>
   </component>
@@ -140,7 +198,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -153,6 +211,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,6 +244,33 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="done" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="done" type="b2602c69:ProjectViewProjectNode" />
+              <item name="done-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="done" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="done" type="b2602c69:ProjectViewProjectNode" />
+              <item name="done-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="done" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="done" type="b2602c69:ProjectViewProjectNode" />
+              <item name="done-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="done" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="done" type="b2602c69:ProjectViewProjectNode" />
@@ -241,11 +327,37 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="done" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="done" type="b2602c69:ProjectViewProjectNode" />
+              <item name="done-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="done" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="done" type="b2602c69:ProjectViewProjectNode" />
+              <item name="done-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="done" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="done" type="b2602c69:ProjectViewProjectNode" />
+              <item name="done-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="done" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,7 +375,18 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.jakubowski.spring.done.services" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jakubowski.spring.done" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -277,7 +400,86 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.UserControllerTest.userShouldBeRetrievedByID">
+    <configuration name="AuthServiceTest.userCannotSignUpWithExistingUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="done" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jakubowski.spring.done.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.services" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.services.AuthServiceTest" />
+      <option name="METHOD_NAME" value="userCannotSignUpWithExistingUsername" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="done" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jakubowski.spring.done.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.shouldReturnUserByID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="done" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jakubowski.spring.done.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.UserControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturnUserByID" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.userShouldBeRetrievedByID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="done" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jakubowski.spring.done.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.UserControllerTest" />
+      <option name="METHOD_NAME" value="userShouldBeRetrievedByID" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.shouldFindUserByItsEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="done" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jakubowski.spring.done.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.repositories" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.repositories.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldFindUserByItsEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DoneApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="done" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.jakubowski.spring.done.DoneApplication" />
@@ -285,6 +487,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserControllerTest.userShouldBeRetrievedByID" />
+        <item itemvalue="JUnit.UserControllerTest.shouldReturnUserByID" />
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.UserRepositoryTest.shouldFindUserByItsEmail" />
+        <item itemvalue="JUnit.AuthServiceTest.userCannotSignUpWithExistingUsername" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -298,12 +509,48 @@
       <updated>1565355362419</updated>
       <workItem from="1565355367603" duration="41313000" />
       <workItem from="1566852937746" duration="33150000" />
-      <workItem from="1567646691937" duration="27245000" />
+      <workItem from="1567646691937" duration="80452000" />
+      <workItem from="1568774057372" duration="515000" />
+      <workItem from="1569292036587" duration="125000" />
+      <workItem from="1569909587448" duration="291000" />
+      <workItem from="1569910365082" duration="1169000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="UserControllerTest - 2019.09.15 at 14h 13m 33s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_shouldReturnUserByID - 2019.09.15 at 14h 29m 38s.xml">
+      <configuration name="UserControllerTest.shouldReturnUserByID" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_userShouldBeRetrievedByID - 2019.09.15 at 15h 12m 30s.xml">
+      <configuration name="UserControllerTest.userShouldBeRetrievedByID" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_userShouldBeRetrievedByID - 2019.09.15 at 15h 19m 17s.xml">
+      <configuration name="UserControllerTest.userShouldBeRetrievedByID" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_userShouldBeRetrievedByID - 2019.09.15 at 15h 21m 38s.xml">
+      <configuration name="UserControllerTest.userShouldBeRetrievedByID" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_userShouldBeRetrievedByID - 2019.09.15 at 15h 33m 52s.xml">
+      <configuration name="UserControllerTest.userShouldBeRetrievedByID" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_userShouldBeRetrievedByID - 2019.09.15 at 15h 36m 19s.xml">
+      <configuration name="UserControllerTest.userShouldBeRetrievedByID" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_userShouldBeRetrievedByID - 2019.09.15 at 15h 43m 55s.xml">
+      <configuration name="UserControllerTest.userShouldBeRetrievedByID" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_userShouldBeRetrievedByID - 2019.09.15 at 15h 45m 07s.xml">
+      <configuration name="UserControllerTest.userShouldBeRetrievedByID" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_userShouldBeRetrievedByID - 2019.09.15 at 15h 48m 32s.xml">
+      <configuration name="UserControllerTest.userShouldBeRetrievedByID" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101708000" />
+    <option name="totallyTimeSpent" value="157015000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -318,7 +565,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28826895" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30543634" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -328,16 +575,16 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20963855" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30722892" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" visible="true" weight="0.25180724" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.25180724" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.20722891" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32891566" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.1493976" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
@@ -369,131 +616,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/function/Supplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/Optional.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3675">
-          <caret line="285" column="52" lean-forward="true" selection-start-line="285" selection-start-column="52" selection-end-line="285" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/exceptions.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/exceptions/BadRequestException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#290#291#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/exceptions/ResourcesNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#815#816#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.6.RELEASE/spring-security-core-5.1.6.RELEASE.jar!/org/springframework/security/core/Authentication.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/WebMvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtUserPrincipal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1501#1502#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.6.RELEASE/spring-security-core-5.1.6.RELEASE.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.6.RELEASE/spring-security-core-5.1.6.RELEASE.jar!/org/springframework/security/core/context/SecurityContextHolder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1157">
-          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1048#1075#1" expanded="true" />
-            <element signature="e#1116#1152#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/enums/Color.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -528,32 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="112" selection-start-line="29" selection-start-column="112" selection-end-line="29" selection-end-column="112" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#936#937#0" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
-            <element signature="e#1123#1124#0" expanded="true" />
-            <element signature="e#1173#1174#0" expanded="true" />
-            <element signature="e#1215#1216#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.9.RELEASE/spring-webmvc-5.1.9.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5937">
@@ -575,138 +671,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2861#2862#0" expanded="true" />
-            <element signature="e#2896#2897#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserStatistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-            <element signature="e#1119#1120#0" expanded="true" />
-            <element signature="e#1156#1157#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#1265#1266#0" expanded="true" />
-            <element signature="e#1300#1301#0" expanded="true" />
-            <element signature="e#1334#1335#0" expanded="true" />
-            <element signature="e#1385#1386#0" expanded="true" />
-            <element signature="e#1431#1432#0" expanded="true" />
-            <element signature="e#1466#1467#0" expanded="true" />
-            <element signature="e#1500#1501#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserStatisticsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="133" column="43" lean-forward="true" selection-start-line="133" selection-start-column="43" selection-end-line="133" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="67" selection-start-line="67" selection-end-line="68" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1824#1825#0" expanded="true" />
-            <element signature="e#1876#1877#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/DoneApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -804,10 +768,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/ApiResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="53" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="53" />
+        <state relative-caret-position="180">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding>
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/CustomUserDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/StatsCalculatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="23" lean-forward="true" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/web/context/request/ServletRequestAttributes.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+          <folding>
+            <element signature="e#1644#1645#0" expanded="true" />
+            <element signature="e#1679#1680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.9.RELEASE/spring-webmvc-5.1.9.RELEASE.jar!/org/springframework/web/servlet/support/ServletUriComponentsBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="91" column="59" selection-start-line="91" selection-start-column="49" selection-end-line="91" selection-end-column="59" />
+          <folding>
+            <element signature="e#3170#3171#0" expanded="true" />
+            <element signature="e#3225#3226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/UserServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="79" column="39" lean-forward="true" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/TodoServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="14" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/TodoListServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="61" column="68" lean-forward="true" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/AuthServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoListRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -815,6 +911,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserPropertiesRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserStatisticsRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
@@ -834,56 +940,153 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoListRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        <state relative-caret-position="135">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/ApiResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/application.yaml" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/repositories/UserRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        <state relative-caret-position="390">
+          <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/DoneApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/JUnitPlatform.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="78" column="51" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
           <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#556#557#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1824#1825#0" expanded="true" />
+            <element signature="e#1876#1877#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/CustomUserDetailsService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/UserControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="20" column="96" selection-start-line="20" selection-start-column="96" selection-end-line="20" selection-end-column="96" />
+        <state relative-caret-position="363">
+          <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtAuthenticationFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserStatistics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1156#1157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="61" column="68" lean-forward="true" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
+        <state relative-caret-position="498">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/resources/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

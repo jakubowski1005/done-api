@@ -18,6 +18,12 @@ public class UserController {
     private UserService userService;
 
 
+    /// for tests
+    @GetMapping("/")
+    public String getHello() {
+        return "Hello";
+    }
+
     @GetMapping("/users/{userId}")
     public User getUserById(@PathVariable long userId,
                             @RequestHeader(value = "Authorization") String authorizationHeader) {

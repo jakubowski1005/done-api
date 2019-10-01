@@ -23,25 +23,32 @@ public class StatsCalculator {
     @Autowired
     private TodoRepository todoRepository;
 
+    @Autowired
+    private TodoListService todoListService;
+
     public boolean recalculateStats(long userId) {
         if (!userRepository.existsById(userId)) return false;
         User user = userRepository.getOne(userId);
+        if(user.getUserStatistics() == null) user.setUserStatistics(new UserStatistics());
+
         UserStatistics userStatistics = user.getUserStatistics();
         userStatistics.setCompletedTasks(calculateCompletedTasks(userId));
-        userStatistics.setCompletedLists(calculateActiceLists(userId));
-        userStatistics.setActiveLists(calculateActiceLists(userId));
+        userStatistics.setCompletedLists(calculateCompletedLists(userId));
+        userStatistics.setActiveLists(calculateActiveLists(userId));
         userStatistics.setDaysWithApp(calculateDaysWithApp(userId));
         return true;
     }
 
     public int calculateCompletedLists(long userId) {
 
-        if (!userRepository.existsById(userId)) return 0;
-
         int counter = 0;
+
+        if (!userRepository.existsById(userId)) return counter;
+
         List<TodoList> lists = userRepository.getOne(userId).getTodolists();
 
         for (TodoList todoList:lists) {
+            todoList.setProgress(todoListService.calculateCompleteLevel(todoList.getId()));
             if (todoList.getProgress() == 1) counter++;
         }
         return counter;
@@ -60,7 +67,7 @@ public class StatsCalculator {
         return counter;
     }
 
-    public int calculateActiceLists(long userId) {
+    public int calculateActiveLists(long userId) {
         return userRepository.getOne(userId).getTodolists().size() - calculateCompletedLists(userId);
     }
 

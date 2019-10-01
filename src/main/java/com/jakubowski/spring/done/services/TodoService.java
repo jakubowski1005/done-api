@@ -56,7 +56,7 @@ public class TodoService {
         if(!authService.isUserAuthorized(userId, authorizationHeader)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 
         TodoList list = todoListRepository.getOne(listId);
-        list.addTodo(todo);
+        list.getTodos().add(todo);
         todoRepository.save(todo);
 
         URI uri = ServletUriComponentsBuilder
@@ -66,7 +66,6 @@ public class TodoService {
                 .toUri();
 
         double progress = todoListService.calculateCompleteLevel(listId);
-        list.setProgress(progress);
         statsCalculator.recalculateStats(userId);
         return ResponseEntity.created(uri).body(new ApiResponse(true, "Todo added successfully!"));
     }
@@ -86,7 +85,7 @@ public class TodoService {
         Todo oldTodo = todoRepository.getOne(todoId);
         todoList.delete(oldTodo);
         todoRepository.delete(oldTodo);
-        todoList.addTodo(todo);
+        todoList.getTodos().add(todo);
         todoRepository.save(todo);
 
         statsCalculator.recalculateStats(userId);
