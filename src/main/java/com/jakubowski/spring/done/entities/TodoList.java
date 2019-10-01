@@ -2,8 +2,7 @@ package com.jakubowski.spring.done.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jakubowski.spring.done.enums.Color;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -16,6 +15,8 @@ import java.util.List;
 @Table(name = "todolists")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class TodoList {
 
     @Id
@@ -24,10 +25,9 @@ public class TodoList {
 
     @NotBlank
     @Size(max = 40)
-    private String listname;
+    @NonNull private String listname;
 
-    @NotNull
-    private Color color;
+    @NonNull private Color color;
 
     @OneToMany
     private List<Todo> todos = new ArrayList<>();

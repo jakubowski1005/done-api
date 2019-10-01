@@ -1,5 +1,6 @@
 package com.jakubowski.spring.done.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.URL;
@@ -11,6 +12,7 @@ import javax.validation.constraints.Size;
 @Table(name = "user_properties")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserProperties {
 
     @Id

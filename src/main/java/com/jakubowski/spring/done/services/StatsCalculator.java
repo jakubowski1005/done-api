@@ -48,8 +48,7 @@ public class StatsCalculator {
         List<TodoList> lists = userRepository.getOne(userId).getTodolists();
 
         for (TodoList todoList:lists) {
-            todoList.setProgress(todoListService.calculateCompleteLevel(todoList.getId()));
-            if (todoList.getProgress() == 1) counter++;
+            if (todoListService.calculateCompleteLevel(todoList.getId()) == 1) counter++;
         }
         return counter;
     }
@@ -62,7 +61,7 @@ public class StatsCalculator {
         List<Todo> todos = todoRepository.getAllByTodoList_User_Id(userId);
 
         for (Todo todo:todos) {
-            if (todo.isCompleted()) counter++;
+            if (todo.isDone()) counter++;
         }
         return counter;
     }
