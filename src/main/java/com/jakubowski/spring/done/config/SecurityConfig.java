@@ -3,6 +3,7 @@ package com.jakubowski.spring.done.config;
 import com.jakubowski.spring.done.security.CustomUserDetailsService;
 import com.jakubowski.spring.done.security.JwtAuthenticationFilter;
 import com.jakubowski.spring.done.security.UnauthorizedResponseAuthenticationEntryPoint;
+import com.jakubowski.spring.done.security.UserSecurity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,6 +37,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public JwtAuthenticationFilter jwtAuthenticationFilter() {
         return new JwtAuthenticationFilter();
+    }
+
+    @Bean
+    public UserSecurity userSecurity() {
+        return new UserSecurity();
     }
 
 
@@ -84,6 +90,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .permitAll()
                     .antMatchers("/h2-console/**")
                         .permitAll()
+                    .antMatchers("/api/users/{userId}/**")
+                        .access("@userSecurity.isUserAuthorized(authentication, #userId)")
                 .anyRequest()
                     .authenticated();
 

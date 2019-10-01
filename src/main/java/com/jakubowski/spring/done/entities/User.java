@@ -1,8 +1,7 @@
 package com.jakubowski.spring.done.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
@@ -25,6 +24,8 @@ import java.util.List;
 })
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class User {
 
     @Id
@@ -33,17 +34,17 @@ public class User {
 
     @NotBlank
     @Size(max = 15)
-    private String username;
+    @NonNull private String username;
 
     @NaturalId
     @NotBlank
     @Size(max = 40)
     @Email
-    private String email;
+    @NonNull private String email;
 
     @NotBlank
     @Size(max = 100)
-    private String password;
+    @NonNull private String password;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="user")
     private List<TodoList> todolists = new ArrayList<>();

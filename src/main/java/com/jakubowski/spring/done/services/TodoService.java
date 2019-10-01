@@ -83,7 +83,7 @@ public class TodoService {
         }
 
         Todo oldTodo = todoRepository.getOne(todoId);
-        todoList.delete(oldTodo);
+        todoList.getTodos().remove(oldTodo);
         todoRepository.delete(oldTodo);
         todoList.getTodos().add(todo);
         todoRepository.save(todo);
@@ -101,7 +101,7 @@ public class TodoService {
 
         Todo todo = todoRepository.getOne(todoId);
         todoRepository.delete(todo);
-        todoListRepository.getOne(listId).delete(todo);
+        todoListRepository.getOne(listId).getTodos().remove(todo);
 
         statsCalculator.recalculateStats(userId);
         return ResponseEntity.noContent().build();

@@ -35,16 +35,4 @@ public class TodoList {
     @ManyToOne
     @JsonIgnore
     private User user;
-
-
-    public void addTodo(Todo todo) {
-
-        todo.setTodoList(this);
-        this.todos.add(todo);
-    }
-
-    public void delete(Todo todo) {
-        this.todos.remove(todo);
-    }
-
 }
