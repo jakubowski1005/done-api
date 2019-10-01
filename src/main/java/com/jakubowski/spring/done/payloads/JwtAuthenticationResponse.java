@@ -1,27 +1,14 @@
 package com.jakubowski.spring.done.payloads;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
 public class JwtAuthenticationResponse {
 
     private String accessToken;
-    private String tokenType = "Bearer";
-
-    public JwtAuthenticationResponse(String accessToken) {
-        this.accessToken = accessToken;
-    }
-
-    public String getAccesToken() {
-        return accessToken;
-    }
-
-    public void setAccesToken(String accesToken) {
-        this.accessToken = accesToken;
-    }
-
-    public String getTokenType() {
-        return tokenType;
-    }
-
-    public void setTokenType(String tokenType) {
-        this.tokenType = tokenType;
-    }
+    private final String tokenType = "Bearer";
 }
