@@ -19,9 +19,6 @@ public class UserService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private AuthService authService;
-
-    @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -30,37 +27,26 @@ public class UserService {
     @Autowired
     private UserStatisticsRepository userStatisticsRepository;
 
-    public User getUserById(long userId, String authorizationHeader) {
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) return null;
+
+    public User getUserById(long userId) {
         return userRepository.findById(userId).get();
     }
 
-    public UserProperties getUserProperties(long userId, String authorizationHeader) {
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) return null;
+    public UserProperties getUserProperties(long userId) {
         return userRepository.findById(userId).get().getUserProperties();
     }
 
-    public UserStatistics getUserStatistics(long userId, String authorizationHeader) {
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) return null;
+    public UserStatistics getUserStatistics(long userId) {
         return userRepository.findById(userId).get().getUserStatistics();
     }
 
-    public ResponseEntity<?> deleteUser(long userId, String authorizationHeader) {
-
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
-
+    public ResponseEntity<?> deleteUser(long userId) {
         userRepository.deleteById(userId);
         logger.info("User with ID '{}' has been deleted.", userId);
         return ResponseEntity.noContent().build();
     }
 
-    public ResponseEntity<?> updateUserProperties(long userId, UserProperties userProperties, String authorizationHeader) {
-
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
+    public ResponseEntity<?> updateUserProperties(long userId, UserProperties userProperties) {
 
         User user = userRepository.findById(userId).get();
 
@@ -77,11 +63,7 @@ public class UserService {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    public ResponseEntity<?> updateUserStatistics(long userId, UserStatistics userStatistics, String authorizationHeader) {
-
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
+    public ResponseEntity<?> updateUserStatistics(long userId, UserStatistics userStatistics) {
 
         User user = userRepository.findById(userId).get();
 

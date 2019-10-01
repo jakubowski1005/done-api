@@ -17,34 +17,30 @@ public class TodoController {
     private TodoService todoService;
 
     @GetMapping("/users/{userId}/lists/{listId}/todos")
-    public List<Todo> getAllTodos(@PathVariable long userId, @PathVariable long listId,
-                                  @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoService.getAllTodosFromList(userId, listId, authorizationHeader);
+    public List<Todo> getAllTodos(@PathVariable long userId, @PathVariable long listId) {
+        return todoService.getAllTodosFromList(listId);
     }
 
     @GetMapping("/users/{userId}/lists/{listId}/todos/{todoId}")
-    public Todo getTodoById(@PathVariable long userId, @PathVariable long listId, @PathVariable long todoId,
-                                @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoService.getTodoById(userId, listId, todoId, authorizationHeader);
+    public Todo getTodoById(@PathVariable long userId, @PathVariable long listId, @PathVariable long todoId) {
+        return todoService.getTodoById(listId, todoId);
     }
 
 
     @PostMapping("/users/{userId}/lists/{listId}/todos")
-    public ResponseEntity<?> createList(@PathVariable long userId, @PathVariable long listId, @RequestBody Todo todo,
-                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoService.createTodo(userId, listId, todo, authorizationHeader);
+    public ResponseEntity<?> createList(@PathVariable long userId, @PathVariable long listId, @RequestBody Todo todo) {
+        return todoService.createTodo(userId, listId, todo);
     }
 
     @PutMapping("/users/{userId}/lists/{listId}/todos/{todoId}")
     @Transactional
     public ResponseEntity<?> updateList(@PathVariable long userId, @PathVariable long listId, @RequestBody Todo todo,
-                                        @PathVariable long todoId, @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoService.updateTodo(userId, listId, todoId, todo, authorizationHeader);
+                                        @PathVariable long todoId) {
+        return todoService.updateTodo(userId, listId, todoId, todo);
     }
 
     @DeleteMapping("/users/{userId}/lists/{listId}/todos/{todoId}")
-    public ResponseEntity<?> deleteList(@PathVariable long userId, @PathVariable long listId, @PathVariable long todoId,
-                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoService.deleteTodo(userId, listId, todoId, authorizationHeader);
+    public ResponseEntity<?> deleteList(@PathVariable long userId, @PathVariable long listId, @PathVariable long todoId) {
+        return todoService.deleteTodo(userId, listId, todoId);
     }
 }

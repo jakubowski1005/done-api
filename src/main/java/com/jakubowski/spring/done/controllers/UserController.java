@@ -18,47 +18,35 @@ public class UserController {
     private UserService userService;
 
 
-    /// for tests
-    @GetMapping("/")
-    public String getHello() {
-        return "Hello";
-    }
-
     @GetMapping("/users/{userId}")
-    public User getUserById(@PathVariable long userId,
-                            @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return userService.getUserById(userId, authorizationHeader);
+    public User getUserById(@PathVariable long userId) {
+        return userService.getUserById(userId);
     }
 
     @GetMapping("/users/{userId}/properties")
-    public UserProperties getUserProperties(@PathVariable long userId,
-                                            @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return userService.getUserProperties(userId, authorizationHeader);
+    public UserProperties getUserProperties(@PathVariable long userId) {
+        return userService.getUserProperties(userId);
     }
 
     @GetMapping("/users/{userId}/statistics")
-    public UserStatistics getUserStatistics(@PathVariable long userId,
-                                            @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return userService.getUserStatistics(userId, authorizationHeader);
+    public UserStatistics getUserStatistics(@PathVariable long userId) {
+        return userService.getUserStatistics(userId);
     }
 
     @DeleteMapping("/users/{userId}")
-    public ResponseEntity<?> deleteUser(@PathVariable long userId,
-                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return userService.deleteUser(userId, authorizationHeader);
+    public ResponseEntity<?> deleteUser(@PathVariable long userId) {
+        return userService.deleteUser(userId);
     }
 
     @PutMapping("/users/{userId}/properties")
     @Transactional
-    public ResponseEntity<?> updateUserProperties(@PathVariable long userId, @RequestBody UserProperties userProperties,
-                                                  @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return userService.updateUserProperties(userId, userProperties, authorizationHeader);
+    public ResponseEntity<?> updateUserProperties(@PathVariable long userId, @RequestBody UserProperties userProperties) {
+        return userService.updateUserProperties(userId, userProperties);
     }
 
     @PutMapping("/users/{userId}/statistics")
     @Transactional
-    public ResponseEntity<?> updateUserStatistics(@PathVariable long userId, @RequestBody UserStatistics userStatistics,
-                                                  @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return userService.updateUserStatistics(userId, userStatistics, authorizationHeader);
+    public ResponseEntity<?> updateUserStatistics(@PathVariable long userId, @RequestBody UserStatistics userStatistics) {
+        return userService.updateUserStatistics(userId, userStatistics);
     }
 }

@@ -2,6 +2,7 @@ package com.jakubowski.spring.done.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jakubowski.spring.done.entities.User;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@ToString
 public class JwtUserPrincipal implements UserDetails {
 
     private static final long serialVersionUID = 2353642365874363728L;

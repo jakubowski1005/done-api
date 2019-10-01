@@ -22,9 +22,6 @@ public class TodoService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private AuthService authService;
-
-    @Autowired
     private TodoListRepository todoListRepository;
 
     @Autowired
@@ -33,18 +30,15 @@ public class TodoService {
     @Autowired
     private StatsCalculator statsCalculator;
 
-    @Autowired
-    private TodoListService todoListService;
+    public List<Todo> getAllTodosFromList(long listId) {
 
-    public List<Todo> getAllTodosFromList(long userId, long listId, String authorizationHeader) {
-        if (!authService.isUserAuthorized(userId, authorizationHeader)) return null;
         if (!todoListRepository.findById(listId).isPresent()) return null;
         return todoListRepository.getOne(listId).getTodos();
     }
 
 
-    public Todo getTodoById(long userId, long listId, long todoId, String authorizationHeader) {
-        if (!authService.isUserAuthorized(userId, authorizationHeader)) return null;
+    public Todo getTodoById(long listId, long todoId) {
+
         if (!todoRepository.findById(todoId).isPresent()) return null;
         Todo todo = todoRepository.getOne(todoId);
         if (!todoListRepository.getOne(listId).getTodos().contains(todo)) return null;
@@ -52,8 +46,7 @@ public class TodoService {
     }
 
 
-    public ResponseEntity<?> createTodo(long userId, long listId, Todo todo, String authorizationHeader) {
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    public ResponseEntity<?> createTodo(long userId, long listId, Todo todo) {
 
         TodoList list = todoListRepository.getOne(listId);
         list.getTodos().add(todo);
@@ -65,16 +58,12 @@ public class TodoService {
                 .buildAndExpand(todo.getId())
                 .toUri();
 
-        double progress = todoListService.calculateCompleteLevel(listId);
         statsCalculator.recalculateStats(userId);
+        logger.info("Todo created successfully.");
         return ResponseEntity.created(uri).body(new ApiResponse(true, "Todo added successfully!"));
     }
 
-    public ResponseEntity<?> updateTodo(long userId, long listId, long todoId, Todo todo, String authorizationHeader) {
-
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
+    public ResponseEntity<?> updateTodo(long userId, long listId, long todoId, Todo todo) {
 
         TodoList todoList = todoListRepository.getOne(listId);
 
@@ -89,21 +78,19 @@ public class TodoService {
         todoRepository.save(todo);
 
         statsCalculator.recalculateStats(userId);
+        logger.info("Todo id={} updated successfully.", todoId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
-    public ResponseEntity<?> deleteTodo(long userId, long listId, long todoId, String authorizationHeader) {
-
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
+    public ResponseEntity<?> deleteTodo(long userId, long listId, long todoId) {
 
         Todo todo = todoRepository.getOne(todoId);
         todoRepository.delete(todo);
         todoListRepository.getOne(listId).getTodos().remove(todo);
 
         statsCalculator.recalculateStats(userId);
+        logger.info("Todo id={} deleted successfully.", todoId);
         return ResponseEntity.noContent().build();
 
     }

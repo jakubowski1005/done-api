@@ -16,36 +16,31 @@ public class TodoListController {
     private TodoListService todoListService;
 
     @GetMapping("/users/{userId}/lists")
-    public List<TodoList> getAllLists(@PathVariable long userId,
-                                      @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoListService.getAllLists(userId, authorizationHeader);
+    public List<TodoList> getAllLists(@PathVariable long userId) {
+        return todoListService.getAllLists(userId);
     }
 
     @GetMapping("/users/{userId}/lists/{listId}")
-    public TodoList getListById(@PathVariable long userId, @PathVariable long listId,
-                                @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoListService.getListById(userId, listId, authorizationHeader);
+    public TodoList getListById(@PathVariable long userId, @PathVariable long listId) {
+        return todoListService.getListById(listId);
     }
 
 
     @PostMapping("/users/{userId}/lists")
-    public ResponseEntity<?> createList(@PathVariable long userId, @RequestBody TodoList todoList,
-                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoListService.createList(userId, todoList, authorizationHeader);
+    public ResponseEntity<?> createList(@PathVariable long userId, @RequestBody TodoList todoList) {
+        return todoListService.createList(userId, todoList);
     }
 
     @PutMapping("/users/{userId}/lists/{listId}")
     @Transactional
-    public ResponseEntity<?> updateList(@PathVariable long userId, @PathVariable long listId, @RequestBody TodoList todoList,
-                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoListService.updateList(userId, listId, todoList, authorizationHeader);
+    public ResponseEntity<?> updateList(@PathVariable long userId, @PathVariable long listId, @RequestBody TodoList todoList) {
+        return todoListService.updateList(userId, listId, todoList);
     }
 
 
     @DeleteMapping("/users/{userId}/lists/{listId}")
-    public ResponseEntity<?> deleteList(@PathVariable long userId, @PathVariable long listId,
-                                        @RequestHeader(value = "Authorization") String authorizationHeader) {
-        return todoListService.deleteList(userId, listId, authorizationHeader);
+    public ResponseEntity<?> deleteList(@PathVariable long userId, @PathVariable long listId) {
+        return todoListService.deleteList(userId, listId);
     }
 
 }

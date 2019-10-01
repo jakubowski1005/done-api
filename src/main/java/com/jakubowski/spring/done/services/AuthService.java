@@ -55,8 +55,6 @@ public class AuthService {
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));
     }
 
-
-
     public ResponseEntity<?> registerUser(SignUpRequest signUpRequest) {
 
         if(userRepository.existsByEmail(signUpRequest.getEmail())) {
@@ -82,24 +80,4 @@ public class AuthService {
         logger.info("Created new user with username: '{}'", finalUser.getUsername());
         return ResponseEntity.created(uri).body(new ApiResponse(true, "User registered successfully!"));
     }
-
-
-
-    public boolean isUserAuthorized(long userId, String authorizationHeader) {
-
-        String token = authorizationHeader.substring(7);
-        String username = jwtProvider.getUsernameFromJWT(token);
-
-        if(!userRepository.findByUsername(username).isPresent() || !userRepository.existsById(userId)) {
-            logger.warn("Unauthorized behavior. User '{}' cannot perform this operation.", username);
-            return false;
-        }
-
-        User userFromUserId = userRepository.findByUsername(username).get();
-        User userFromToken = userRepository.findById(userId).get();
-
-        return userFromToken.equals(userFromUserId);
-    }
-
-
 }

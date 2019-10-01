@@ -24,9 +24,6 @@ public class TodoListService {
     private final Logger logger = LoggerFactory.getLogger(TodoListService.class);
 
     @Autowired
-    private AuthService authService;
-
-    @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -36,35 +33,26 @@ public class TodoListService {
     private StatsCalculator statsCalculator;
 
 
-    public List<TodoList> getAllLists(long userId, String authorizationHeader) {
+    public List<TodoList> getAllLists(long userId) {
 
-        if(authService.isUserAuthorized(userId, authorizationHeader)) {
-            return userRepository.findById(userId).get().getTodolists();
-        }
-        logger.warn("User with ID '{}' hasn't been authorized to get these lists.", userId);
-        return null;
+        if(!userRepository.existsById(userId)) return null;
+        return userRepository.getOne(userId).getTodolists();
     }
 
 
-    public TodoList getListById(long userId, long listId, String authorizationHeader) {
+    public TodoList getListById(long listId) {
 
         if(!todoListRepository.findById(listId).isPresent()) {
             logger.warn("List with ID: '{}' doesn't exist.", listId);
             return null;
         }
 
-        if(authService.isUserAuthorized(userId, authorizationHeader)) {
-            return todoListRepository.findById(listId).get();
-        }
-        logger.warn("User with ID '{}' hasn't been authorized to get this list.", userId);
-        return null;
+        return todoListRepository.findById(listId).get();
     }
 
 
 
-    public ResponseEntity<?> createList(long userId, TodoList todoList, String authorizationHeader) {
-
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    public ResponseEntity<?> createList(long userId, TodoList todoList) {
 
         Optional<User> user = userRepository.findById(userId);
         user.get().getTodolists().add(todoList);
@@ -82,11 +70,7 @@ public class TodoListService {
     }
 
 
-    public ResponseEntity<?> updateList(long userId, long listId, TodoList todoList, String authorizationHeader) {
-
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
+    public ResponseEntity<?> updateList(long userId, long listId, TodoList todoList) {
 
         User user = userRepository.findById(userId).get();
 
@@ -105,11 +89,7 @@ public class TodoListService {
     }
 
 
-    public ResponseEntity<?> deleteList(long userId, long listId, String authorizationHeader) {
-
-        if(!authService.isUserAuthorized(userId, authorizationHeader)) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
+    public ResponseEntity<?> deleteList(long userId, long listId) {
 
         TodoList todoList = todoListRepository.getOne(listId);
         todoListRepository.delete(todoList);
