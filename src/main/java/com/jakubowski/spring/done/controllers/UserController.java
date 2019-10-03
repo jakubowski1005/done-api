@@ -13,14 +13,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class UserController {
 
-
     @Autowired
     private UserService userService;
-
-    @GetMapping("/test")
-    public String hello() {
-        return "Hello World";
-    }
 
     @GetMapping("/users/{userId}")
     public User getUserById(@PathVariable long userId) {

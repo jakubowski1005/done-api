@@ -53,14 +53,14 @@ public class UserService {
         if(user.getUserProperties() == null) {
             user.setUserProperties(userProperties);
             userPropertiesRepository.save(userProperties);
-            return new ResponseEntity<>(HttpStatus.CREATED);
+            return new ResponseEntity<>(userProperties, HttpStatus.CREATED);
         }
 
         userPropertiesRepository.delete(user.getUserProperties());
         user.setUserProperties(userProperties);
         userPropertiesRepository.save(userProperties);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(userProperties, HttpStatus.OK);
     }
 
     public ResponseEntity<?> updateUserStatistics(long userId, UserStatistics userStatistics) {
@@ -70,13 +70,13 @@ public class UserService {
         if(user.getUserStatistics() == null) {
             user.setUserStatistics(userStatistics);
             userStatisticsRepository.save(userStatistics);
-            return new ResponseEntity<>(HttpStatus.CREATED);
+            return new ResponseEntity<>(userStatistics, HttpStatus.CREATED);
         }
 
         userStatisticsRepository.delete(user.getUserStatistics());
         user.setUserStatistics(userStatistics);
         userStatisticsRepository.save(userStatistics);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(userStatistics, HttpStatus.OK);
     }
 }

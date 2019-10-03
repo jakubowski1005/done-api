@@ -50,7 +50,7 @@ public class AuthService {
 
         String token = jwtProvider.generateTokenFromAuthentication(authentication);
 
-        if(jwtProvider.validateToken(token)) logger.info("User doesn't exist.");
+        if(!jwtProvider.validateToken(token)) logger.info("User doesn't exist.");
 
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));
     }

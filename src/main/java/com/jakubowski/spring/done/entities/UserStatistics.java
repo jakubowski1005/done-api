@@ -1,5 +1,6 @@
 package com.jakubowski.spring.done.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 @Table(name = "user_statistics")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserStatistics {
 
     @Id
