@@ -52,17 +52,17 @@ public class AuthService {
 
         if(!jwtProvider.validateToken(token)) logger.info("User doesn't exist.");
 
-        return ResponseEntity.ok(new JwtAuthenticationResponse(token));
+        return new ResponseEntity<>(new JwtAuthenticationResponse(token), HttpStatus.OK);
     }
 
     public ResponseEntity<?> registerUser(SignUpRequest signUpRequest) {
 
         if(userRepository.existsByEmail(signUpRequest.getEmail())) {
-            return new ResponseEntity(new ApiResponse(false, "E-mail already in use!"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new ApiResponse(false, "E-mail already in use!"), HttpStatus.BAD_REQUEST);
         }
 
         if(userRepository.existsByUsername(signUpRequest.getUsername())) {
-            return new ResponseEntity(new ApiResponse(false, "Username already taken!"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new ApiResponse(false, "Username already taken!"), HttpStatus.BAD_REQUEST);
         }
 
         User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(), signUpRequest.getPassword());
@@ -73,11 +73,11 @@ public class AuthService {
 
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentContextPath()
-                .path("/api/users/{username}")
-                .buildAndExpand(finalUser.getUsername())
+                .path("/{id}")
+                .buildAndExpand(finalUser.getId())
                 .toUri();
 
         logger.info("Created new user with username: '{}'", finalUser.getUsername());
-        return ResponseEntity.created(uri).body(new ApiResponse(true, "User registered successfully!"));
+        return new ResponseEntity<>(new ApiResponse(true, "User registered successfully!"), HttpStatus.CREATED);
     }
 }

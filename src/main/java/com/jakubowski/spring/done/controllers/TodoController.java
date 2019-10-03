@@ -10,36 +10,36 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/users/{userId}/lists/{listId}")
 public class TodoController {
 
     @Autowired
     private TodoService todoService;
 
-    @GetMapping("/users/{userId}/lists/{listId}/todos")
-    public List<Todo> getAllTodos(@PathVariable long userId, @PathVariable long listId) {
+    @GetMapping("/todos")
+    public List<Todo> getAllTodos(@PathVariable long listId) {
         return todoService.getAllTodosFromList(listId);
     }
 
-    @GetMapping("/users/{userId}/lists/{listId}/todos/{todoId}")
-    public Todo getTodoById(@PathVariable long userId, @PathVariable long listId, @PathVariable long todoId) {
+    @GetMapping("/todos/{todoId}")
+    public Todo getTodoById(@PathVariable long listId, @PathVariable long todoId) {
         return todoService.getTodoById(listId, todoId);
     }
 
 
-    @PostMapping("/users/{userId}/lists/{listId}/todos")
+    @PostMapping("/todos")
     public ResponseEntity<?> createList(@PathVariable long userId, @PathVariable long listId, @RequestBody Todo todo) {
         return todoService.createTodo(userId, listId, todo);
     }
 
-    @PutMapping("/users/{userId}/lists/{listId}/todos/{todoId}")
+    @PutMapping("/todos/{todoId}")
     @Transactional
     public ResponseEntity<?> updateList(@PathVariable long userId, @PathVariable long listId, @RequestBody Todo todo,
                                         @PathVariable long todoId) {
         return todoService.updateTodo(userId, listId, todoId, todo);
     }
 
-    @DeleteMapping("/users/{userId}/lists/{listId}/todos/{todoId}")
+    @DeleteMapping("/todos/{todoId}")
     public ResponseEntity<?> deleteList(@PathVariable long userId, @PathVariable long listId, @PathVariable long todoId) {
         return todoService.deleteTodo(userId, listId, todoId);
     }
