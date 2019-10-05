@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/TodoControllerSpec.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/TodoListControllerSpec.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/AuthServiceSpec.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/TodoListServiceSpec.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/UserServiceSpec.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/arturjakubowski.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/arturjakubowski.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/JwtAuthenticationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignInRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignInRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignUpRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/AuthControllerSpec.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/AuthControllerSpec.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,38 +26,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="109" column="1" lean-forward="true" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/TodoControllerSpec.groovy">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/TodoListServiceSpec.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="95" column="113" selection-start-line="95" selection-start-column="113" selection-end-line="95" selection-end-column="113" />
+            <state relative-caret-position="690">
+              <caret line="193" column="36" selection-start-line="193" selection-start-column="36" selection-end-line="193" selection-end-column="36" />
               <folding>
-                <element signature="e#48#98#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/TodoListControllerSpec.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="68" selection-start-line="68" selection-end-line="73" selection-end-column="68" />
-              <folding>
-                <element signature="e#48#98#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="51" />
-              <folding>
-                <element signature="e#646#647#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
+                <element signature="e#45#92#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,9 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserStatisticsRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserPropertiesRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoListRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoRepository.java" />
@@ -110,13 +105,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserProperties.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/resources/Data.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtUserPrincipal.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoService.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/TodoServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/UserServiceTest.java" />
@@ -127,11 +120,8 @@
         <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/DoneApplicationTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserStatistics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java" />
         <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/UserControllerSpec.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/JwtAuthenticationResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignInRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignUpRequest.java" />
         <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/AuthControllerSpec.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java" />
@@ -139,6 +129,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoController.java" />
         <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/TodoListControllerSpec.groovy" />
         <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/TodoControllerSpec.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/JwtAuthenticationResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/AuthServiceSpec.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/UserServiceSpec.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/TodoListServiceSpec.groovy" />
       </list>
     </option>
   </component>
@@ -149,9 +147,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="1440" />
+    <option name="y" value="-918" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -305,6 +305,15 @@
               <item name="done" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="done" type="b2602c69:ProjectViewProjectNode" />
+              <item name="done-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="groovy" type="462c0819:PsiDirectoryNode" />
+              <item name="done" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -357,71 +366,80 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in done">
-    <configuration name="All in done" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="done" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthControllerSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TodoListServiceSpec.should correct calculate progress">
+    <configuration name="TodoListServiceSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="done" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jakubowski.spring.done.controllers.*" />
+          <option name="PATTERN" value="com.jakubowski.spring.done.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.controllers.AuthControllerSpec" />
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.services" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.services.TodoListServiceSpec" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TodoControllerSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TodoListServiceSpec.get all lists return all lists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="done" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jakubowski.spring.done.controllers.*" />
+          <option name="PATTERN" value="com.jakubowski.spring.done.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.controllers.TodoControllerSpec" />
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.services" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.services.TodoListServiceSpec" />
+      <option name="METHOD_NAME" value="get all lists return all lists" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoListServiceSpec.should correct calculate progress" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="done" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jakubowski.spring.done.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.services" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.services.TodoListServiceSpec" />
+      <option name="METHOD_NAME" value="should correct calculate progress" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="done" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jakubowski.spring.done.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.services" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.services.UserServiceSpec" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TodoListControllerSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceSpec.should update existing props" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="done" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jakubowski.spring.done.controllers.*" />
+          <option name="PATTERN" value="com.jakubowski.spring.done.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.controllers.TodoListControllerSpec" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TodoListControllerSpec.should update a list" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="done" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jakubowski.spring.done.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.controllers.TodoListControllerSpec" />
-      <option name="METHOD_NAME" value="should update a list" />
+      <option name="PACKAGE_NAME" value="com.jakubowski.spring.done.services" />
+      <option name="MAIN_CLASS_NAME" value="com.jakubowski.spring.done.services.UserServiceSpec" />
+      <option name="METHOD_NAME" value="should update existing props" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -436,11 +454,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in done" />
-        <item itemvalue="JUnit.TodoControllerSpec" />
-        <item itemvalue="JUnit.TodoListControllerSpec.should update a list" />
-        <item itemvalue="JUnit.TodoListControllerSpec" />
-        <item itemvalue="JUnit.AuthControllerSpec" />
+        <item itemvalue="JUnit.TodoListServiceSpec.should correct calculate progress" />
+        <item itemvalue="JUnit.TodoListServiceSpec" />
+        <item itemvalue="JUnit.TodoListServiceSpec.get all lists return all lists" />
+        <item itemvalue="JUnit.UserServiceSpec" />
+        <item itemvalue="JUnit.UserServiceSpec.should update existing props" />
       </list>
     </recent_temporary>
   </component>
@@ -460,44 +478,44 @@
       <workItem from="1568774057372" duration="515000" />
       <workItem from="1569292036587" duration="125000" />
       <workItem from="1569909587448" duration="291000" />
-      <workItem from="1569910365082" duration="38932000" />
+      <workItem from="1569910365082" duration="62607000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AuthControllerSpec - 2019.10.03 at 15h 22m 07s.xml">
-      <configuration name="AuthControllerSpec" configurationId="JUnit" />
+    <history-entry file="UserServiceSpec_get_user_props_should_return_props_by_id - 2019.10.05 at 18h 31m 53s.xml">
+      <configuration name="UserServiceSpec.get user props should return props by id" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AuthControllerSpec_should_successfully_create_new_user - 2019.10.03 at 15h 24m 03s.xml">
-      <configuration name="AuthControllerSpec.should successfully create new user" configurationId="JUnit" />
+    <history-entry file="UserServiceSpec_should_delete_user - 2019.10.05 at 18h 37m 13s.xml">
+      <configuration name="UserServiceSpec.should delete user" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AuthControllerSpec - 2019.10.03 at 15h 25m 35s.xml">
-      <configuration name="AuthControllerSpec" configurationId="JUnit" />
+    <history-entry file="UserServiceSpec_should_update_existing_props - 2019.10.05 at 19h 11m 40s.xml">
+      <configuration name="UserServiceSpec.should update existing props" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TodoListControllerSpec - 2019.10.03 at 15h 55m 03s.xml">
-      <configuration name="TodoListControllerSpec" configurationId="JUnit" />
+    <history-entry file="UserServiceSpec - 2019.10.05 at 19h 14m 39s.xml">
+      <configuration name="UserServiceSpec" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TodoListControllerSpec - 2019.10.03 at 15h 58m 02s.xml">
-      <configuration name="TodoListControllerSpec" configurationId="JUnit" />
+    <history-entry file="TodoListServiceSpec - 2019.10.05 at 21h 28m 04s.xml">
+      <configuration name="TodoListServiceSpec" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TodoListControllerSpec - 2019.10.03 at 15h 59m 30s.xml">
-      <configuration name="TodoListControllerSpec" configurationId="JUnit" />
+    <history-entry file="TodoListServiceSpec - 2019.10.05 at 21h 29m 29s.xml">
+      <configuration name="TodoListServiceSpec" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TodoListControllerSpec - 2019.10.03 at 15h 59m 52s.xml">
-      <configuration name="TodoListControllerSpec" configurationId="JUnit" />
+    <history-entry file="TodoListServiceSpec - 2019.10.05 at 21h 31m 43s.xml">
+      <configuration name="TodoListServiceSpec" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TodoListControllerSpec - 2019.10.03 at 16h 04m 09s.xml">
-      <configuration name="TodoListControllerSpec" configurationId="JUnit" />
+    <history-entry file="TodoListServiceSpec - 2019.10.05 at 21h 33m 23s.xml">
+      <configuration name="TodoListServiceSpec" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TodoListControllerSpec_should_update_a_list - 2019.10.03 at 16h 05m 27s.xml">
-      <configuration name="TodoListControllerSpec.should update a list" configurationId="JUnit" />
+    <history-entry file="TodoListServiceSpec_get_all_lists_return_all_lists - 2019.10.05 at 21h 41m 24s.xml">
+      <configuration name="TodoListServiceSpec.get all lists return all lists" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TodoControllerSpec - 2019.10.03 at 16h 30m 37s.xml">
-      <configuration name="TodoControllerSpec" configurationId="JUnit" />
+    <history-entry file="TodoListServiceSpec - 2019.10.05 at 21h 42m 47s.xml">
+      <configuration name="TodoListServiceSpec" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194778000" />
+    <option name="totallyTimeSpent" value="218453000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -509,9 +527,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="1440" y="-918" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30543634" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22736955" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -521,7 +540,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2746988" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22574258" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -530,7 +549,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.25180724" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.20722891" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.25301206" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.25247526" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
@@ -562,34 +581,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/TodoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="53" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/application.yaml" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/repositories/UserRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/JUnitPlatform.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/UserControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -616,16 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/ApiResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,16 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/Todo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -782,40 +753,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -903,29 +844,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/SignInRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/JwtAuthenticationResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
@@ -945,30 +864,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="57" column="48" lean-forward="true" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="22" column="25" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-327">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -981,16 +880,6 @@
             <element signature="e#712#713#0" expanded="true" />
             <element signature="e#824#825#0" expanded="true" />
             <element signature="e#882#883#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/AuthControllerSpec.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding>
-            <element signature="e#48#98#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1016,22 +905,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/TodoListControllerSpec.groovy">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.6.RELEASE/spring-security-core-5.1.6.RELEASE.jar!/org/springframework/security/authentication/AuthenticationManager.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="68" selection-start-line="68" selection-end-line="73" selection-end-column="68" />
+        <state relative-caret-position="90">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding>
-            <element signature="e#48#98#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/JwtAuthenticationResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/payloads/ApiResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/TodoControllerSpec.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="1425">
           <caret line="95" column="113" selection-start-line="95" selection-start-column="113" selection-end-line="95" selection-end-column="113" />
           <folding>
             <element signature="e#48#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/AuthControllerSpec.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#48#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="67" selection-start-line="44" selection-start-column="67" selection-end-line="44" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="e#1115#1116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/UserServiceSpec.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="115" column="36" lean-forward="true" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
+          <folding>
+            <element signature="e#45#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="70" column="64" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/AuthServiceSpec.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+          <folding>
+            <element signature="e#45#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/JwtProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/TodoListControllerSpec.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="25" selection-end-column="19" />
+          <folding>
+            <element signature="e#48#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/TodoList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/TodoListService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="109" column="1" lean-forward="true" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/StatsCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/TodoListServiceSpec.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="193" column="36" selection-start-line="193" selection-start-column="36" selection-end-line="193" selection-end-column="36" />
+          <folding>
+            <element signature="e#45#92#0" expanded="true" />
           </folding>
         </state>
       </provider>

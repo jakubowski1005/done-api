@@ -18,9 +18,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import java.net.URI;
 
 @Service
 public class AuthService {
@@ -50,7 +47,9 @@ public class AuthService {
 
         String token = jwtProvider.generateTokenFromAuthentication(authentication);
 
-        if(!jwtProvider.validateToken(token)) logger.info("User doesn't exist.");
+        if(!jwtProvider.validateToken(token)) {
+            return new ResponseEntity<>(new ApiResponse(false, "User doesn't exist"), HttpStatus.UNAUTHORIZED);
+        }
 
         return new ResponseEntity<>(new JwtAuthenticationResponse(token), HttpStatus.OK);
     }
@@ -65,19 +64,11 @@ public class AuthService {
             return new ResponseEntity<>(new ApiResponse(false, "Username already taken!"), HttpStatus.BAD_REQUEST);
         }
 
-        User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(), signUpRequest.getPassword());
+        String encodedPassword = passwordEncoder.encode(signUpRequest.getPassword());
+        User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(), encodedPassword);
+        userRepository.save(user);
 
-        user.setPassword(passwordEncoder.encode(signUpRequest.getPassword()));
-
-        User finalUser = userRepository.save(user);
-
-        URI uri = ServletUriComponentsBuilder
-                .fromCurrentContextPath()
-                .path("/{id}")
-                .buildAndExpand(finalUser.getId())
-                .toUri();
-
-        logger.info("Created new user with username: '{}'", finalUser.getUsername());
+        logger.info("Created new user with username: '{}'", user.getUsername());
         return new ResponseEntity<>(new ApiResponse(true, "User registered successfully!"), HttpStatus.CREATED);
     }
 }

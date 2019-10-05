@@ -43,7 +43,7 @@ public class UserService {
     public ResponseEntity<?> deleteUser(long userId) {
         userRepository.deleteById(userId);
         logger.info("User with ID '{}' has been deleted.", userId);
-        return ResponseEntity.noContent().build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     public ResponseEntity<?> updateUserProperties(long userId, UserProperties userProperties) {
