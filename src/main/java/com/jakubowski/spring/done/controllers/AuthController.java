@@ -20,6 +20,11 @@ public class AuthController {
         return "Hello world!";
     }
 
+    @GetMapping("/error")
+    public String error() {
+        return "ERROR";
+    }
+
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody SignInRequest signInRequest) {
         return authService.authenticateUser(signInRequest);
