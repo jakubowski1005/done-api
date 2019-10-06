@@ -1,6 +1,5 @@
 package com.jakubowski.spring.done.security;
 
-import com.jakubowski.spring.done.entities.User;
 import com.jakubowski.spring.done.repositories.UserRepository;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.impl.DefaultClock;
