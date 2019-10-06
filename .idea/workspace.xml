@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="" />
+    <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,14 +27,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+            <state relative-caret-position="150">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding>
-                <element signature="e#590#591#0" expanded="true" />
-                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#215#216#0" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
+                <element signature="e#307#308#0" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,7 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/exceptions/ForbiddenException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/entities/UserProperties.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/resources/Data.java" />
@@ -133,6 +146,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/DatabaseConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TestController.java" />
       </list>
     </option>
   </component>
@@ -432,7 +446,7 @@
       <workItem from="1569292036587" duration="125000" />
       <workItem from="1569909587448" duration="291000" />
       <workItem from="1569910365082" duration="63488000" />
-      <workItem from="1570323126959" duration="21121000" />
+      <workItem from="1570323126959" duration="21265000" />
     </task>
     <servers />
   </component>
@@ -469,7 +483,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240455000" />
+    <option name="totallyTimeSpent" value="240599000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -535,7 +549,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/StatsCalculatorTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/TodoServiceTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/TodoListServiceTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/jakubowski/spring/done/services/UserServiceTest.java" />
@@ -955,11 +968,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/AuthController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        <state relative-caret-position="150">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
           </folding>
         </state>
       </provider>

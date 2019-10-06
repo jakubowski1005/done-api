@@ -15,15 +15,6 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    @GetMapping("/")
-    public String hello() {
-        return "Hello world!";
-    }
-
-    @GetMapping("/error")
-    public String error() {
-        return "ERROR";
-    }
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody SignInRequest signInRequest) {
