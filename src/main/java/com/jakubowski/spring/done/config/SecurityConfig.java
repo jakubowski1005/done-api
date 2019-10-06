@@ -34,15 +34,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     UnauthorizedResponseAuthenticationEntryPoint unauthorizedHandler;
 
+    @Autowired
+    private UserSecurity userSecurity;
+
     @Bean
     public JwtAuthenticationFilter jwtAuthenticationFilter() {
         return new JwtAuthenticationFilter();
     }
 
-    @Bean
-    public UserSecurity userSecurity() {
-        return new UserSecurity();
-    }
+
 
 
     @Override

@@ -103,7 +103,7 @@ public class TodoListService {
         double completedTodos = 0;
 
         for (Todo todo : todos) {
-            if(todo.isDone()) completedTodos++;
+            if(todo.getIsDone()) completedTodos++;
         }
         return (completedTodos/todos.size());
     }

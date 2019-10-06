@@ -11,7 +11,6 @@ import com.jakubowski.spring.done.repositories.UserRepository
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import spock.lang.Specification
-import spock.lang.Unroll
 
 class TodoListServiceSpec extends Specification {
 
@@ -174,18 +173,18 @@ class TodoListServiceSpec extends Specification {
     void 'should correct calculate progress'() {
         given:
         List<Todo> todosList1 = new ArrayList<>()
-        todosList1 << new Todo('1', false, Priority.URGENT)
-        todosList1 << new Todo('2', false, Priority.NORMAL)
-        todosList1 << new Todo('3', true, Priority.NORMAL)
+        todosList1 << new Todo(1L, '1', false, Priority.URGENT, null)
+        todosList1 << new Todo(2L, '2', false, Priority.NORMAL, null)
+        todosList1 << new Todo(3L, '3', true, Priority.NORMAL, null)
 
         List<Todo> todosList2 = new ArrayList<>()
-        todosList2 << new Todo('1', false, Priority.URGENT)
-        todosList2 << new Todo('2', true, Priority.URGENT)
+        todosList2 << new Todo(4L, '1', false, Priority.URGENT, null)
+        todosList2 << new Todo(5L, '2', true, Priority.URGENT, null)
 
         List<Todo> todosList3 = new ArrayList<>()
-        todosList3 << new Todo('1', false, Priority.URGENT)
-        todosList3 << new Todo('2', true, Priority.URGENT)
-        todosList3 << new Todo('3', true, Priority.URGENT)
+        todosList3 << new Todo(6L, '1', false, Priority.URGENT, null)
+        todosList3 << new Todo(7L, '2', true, Priority.URGENT, null)
+        todosList3 << new Todo(8L, '3', true, Priority.URGENT, null)
 
         TodoList list1 = new TodoList(1L, 'listname1', Color.BLUE, todosList1, null)
         TodoList list2 = new TodoList(2L, 'listname2', Color.RED, todosList2, null)

@@ -18,18 +18,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
-        User user = userRepository.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail).orElseThrow(
-                () -> new UsernameNotFoundException("User with those credentials not found: " + usernameOrEmail)
-        );
 
-        return JwtUserPrincipal.create(user);
-    }
-
-    @Transactional
-    public UserDetails loadUserById(Long id) {
-        User user = userRepository.findById(id).orElseThrow(
-                () -> new UsernameNotFoundException("Not found user with ID: " + id)
-        );
+        User user = userRepository.findByUsernameOrEmail(usernameOrEmail).orElseThrow(
+                () -> new UsernameNotFoundException("User with those credentials not found: " + usernameOrEmail));
 
         return JwtUserPrincipal.create(user);
     }

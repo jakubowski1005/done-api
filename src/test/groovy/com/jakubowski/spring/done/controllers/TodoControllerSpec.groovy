@@ -35,7 +35,7 @@ class TodoControllerSpec extends Specification {
         mockMvc = MockMvcBuilders.standaloneSetup(controller).alwaysDo(MockMvcResultHandlers.print()).build()
 
         todos = new ArrayList<>()
-        todo1 = new Todo('desc', false, Priority.NORMAL)
+        todo1 = new Todo('desc',false, Priority.NORMAL)
         todo2 = new Todo('desc', true, Priority.URGENT)
 
         todos << todo1

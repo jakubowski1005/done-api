@@ -8,9 +8,10 @@ import org.springframework.test.context.ContextConfiguration
 import spock.lang.Ignore
 import spock.lang.Specification
 
-@Ignore
-@DataJpaTest
+//@Ignore
 @ContextConfiguration
+@DataJpaTest
+
 class UserRepositorySpec extends Specification {
 
     @Autowired
@@ -41,10 +42,14 @@ class UserRepositorySpec extends Specification {
 
     void 'should find by username or email'() {
         expect:
-        userRepository.findByUsernameOrEmail('johnny', 'email@gmail.com') == Optional.of(user)
-        userRepository.findByUsernameOrEmail('john', 'email@gmail.com') == Optional.of(user)
-        userRepository.findByUsernameOrEmail('johnny', 'email123@gmail.com') == Optional.of(user)
-        userRepository.findByUsernameOrEmail('johnny123', 'email123@gmail.com') == Optional.empty()
+        userRepository.findByUsernameOrEmail('johnny') == Optional.of(user)
+        userRepository.findByUsernameOrEmail('email@gmail.com') == Optional.of(user)
+    }
+
+    void 'should return empty optional if user doesnt exist'() {
+        expect:
+        userRepository.findByUsernameOrEmail('john') == Optional.empty()
+        userRepository.findByUsernameOrEmail('email123@gmail.com') == Optional.empty()
     }
 
     void cleanup() {

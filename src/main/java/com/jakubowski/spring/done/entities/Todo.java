@@ -25,7 +25,7 @@ public class Todo {
     @NonNull private String description;
 
     @NonNull
-    private boolean isDone;
+    private Boolean isDone;
 
     @NonNull
     private Priority priority;

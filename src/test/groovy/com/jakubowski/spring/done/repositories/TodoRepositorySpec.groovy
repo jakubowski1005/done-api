@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration
 import spock.lang.Ignore
 import spock.lang.Specification
 
-@Ignore
+//@Ignore
 @ContextConfiguration
 @DataJpaTest
 class TodoRepositorySpec extends Specification {

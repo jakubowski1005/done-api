@@ -61,7 +61,7 @@ public class StatsCalculator {
         List<Todo> todos = todoRepository.getAllByTodoList_User_Id(userId);
 
         for (Todo todo:todos) {
-            if (todo.isDone()) {
+            if (todo.getIsDone()) {
                 counter++;
             }
         }
