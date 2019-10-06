@@ -38,37 +38,39 @@ public class TodoService {
 
 
     public Todo getTodoById(long listId, long todoId) {
-
+        if (!todoListRepository.findById(listId).isPresent()) return null;
         if (!todoRepository.findById(todoId).isPresent()) return null;
         Todo todo = todoRepository.getOne(todoId);
         if (!todoListRepository.getOne(listId).getTodos().contains(todo)) return null;
-        return todoRepository.getOne(todoId);
+        return todo;
     }
 
 
     public ResponseEntity<?> createTodo(long userId, long listId, Todo todo) {
 
+        if(!todoListRepository.findById(listId).isPresent()) {
+            return new ResponseEntity<>(new ApiResponse(false, "List doesn't exist."), HttpStatus.NOT_FOUND);
+        }
+
         TodoList list = todoListRepository.getOne(listId);
         list.getTodos().add(todo);
         todoRepository.save(todo);
 
-        URI uri = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(todo.getId())
-                .toUri();
-
         statsCalculator.recalculateStats(userId);
         logger.info("Todo created successfully.");
-        return ResponseEntity.created(uri).body(new ApiResponse(true, "Todo added successfully!"));
+        return new ResponseEntity<>(new ApiResponse(true, "Todo added successfully!"), HttpStatus.CREATED);
     }
 
     public ResponseEntity<?> updateTodo(long userId, long listId, long todoId, Todo todo) {
 
+        if(!todoListRepository.findById(listId).isPresent()) {
+            return new ResponseEntity<>(new ApiResponse(false, "List doesn't exist."), HttpStatus.NOT_FOUND);
+        }
+
         TodoList todoList = todoListRepository.getOne(listId);
 
         if (todoList.getTodos() == null || !todoRepository.findById(todoId).isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(new ApiResponse(false, "Todo doesn't exist."), HttpStatus.NOT_FOUND);
         }
 
         Todo oldTodo = todoRepository.getOne(todoId);
@@ -79,11 +81,15 @@ public class TodoService {
 
         statsCalculator.recalculateStats(userId);
         logger.info("Todo id={} updated successfully.", todoId);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(new ApiResponse(true, "Todo updated successfully."), HttpStatus.OK);
     }
 
 
     public ResponseEntity<?> deleteTodo(long userId, long listId, long todoId) {
+
+        if(!todoListRepository.findById(listId).isPresent() || !todoRepository.findById(todoId).isPresent()) {
+            return new ResponseEntity<>(new ApiResponse(false, "List or todo doesn't exist."), HttpStatus.NOT_FOUND);
+        }
 
         Todo todo = todoRepository.getOne(todoId);
         todoRepository.delete(todo);
@@ -91,7 +97,7 @@ public class TodoService {
 
         statsCalculator.recalculateStats(userId);
         logger.info("Todo id={} deleted successfully.", todoId);
-        return ResponseEntity.noContent().build();
+        return new ResponseEntity<>(new ApiResponse(true, "Todo deleted successfully."), HttpStatus.NO_CONTENT);
 
     }
 }

@@ -8,6 +8,4 @@ import java.util.List;
 
 @Repository
 public interface TodoListRepository extends JpaRepository<TodoList, Long> {
-
-    List<TodoList> findAllByUser_Id(long userId);
 }

@@ -2,14 +2,10 @@ package com.jakubowski.spring.done.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jakubowski.spring.done.enums.Priority;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -17,6 +13,7 @@ import javax.validation.constraints.Size;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class Todo {
 
     @Id
@@ -35,5 +32,6 @@ public class Todo {
 
     @ManyToOne
     @JsonIgnore
+    @ToString.Exclude
     private TodoList todoList;
 }

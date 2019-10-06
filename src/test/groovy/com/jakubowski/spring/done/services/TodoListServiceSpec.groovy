@@ -11,6 +11,7 @@ import com.jakubowski.spring.done.repositories.UserRepository
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import spock.lang.Specification
+import spock.lang.Unroll
 
 class TodoListServiceSpec extends Specification {
 
@@ -171,29 +172,37 @@ class TodoListServiceSpec extends Specification {
     }
 
     void 'should correct calculate progress'() {
+        given:
         List<Todo> todosList1 = new ArrayList<>()
         todosList1 << new Todo('1', false, Priority.URGENT)
-        todosList1 << new Todo('2', true, Priority.NORMAL)
+        todosList1 << new Todo('2', false, Priority.NORMAL)
+        todosList1 << new Todo('3', true, Priority.NORMAL)
 
         List<Todo> todosList2 = new ArrayList<>()
         todosList2 << new Todo('1', false, Priority.URGENT)
         todosList2 << new Todo('2', true, Priority.URGENT)
-        todosList2 << new Todo('3', true, Priority.URGENT)
 
         List<Todo> todosList3 = new ArrayList<>()
         todosList3 << new Todo('1', false, Priority.URGENT)
-        todosList3 << new Todo('2', false, Priority.URGENT)
+        todosList3 << new Todo('2', true, Priority.URGENT)
         todosList3 << new Todo('3', true, Priority.URGENT)
 
-        todoListRepository.getOne(1L) >> listOfTodoLists
+        TodoList list1 = new TodoList(1L, 'listname1', Color.BLUE, todosList1, null)
+        TodoList list2 = new TodoList(2L, 'listname2', Color.RED, todosList2, null)
+        TodoList list3 = new TodoList(3L, 'listname3', Color.YELLOW, todosList3, null)
 
-        expect:
+        when:
+        todoListRepository.getOne(1L) >> list1
+        todoListRepository.getOne(2L) >> list2
+        todoListRepository.getOne(3L) >> list3
 
-        todoListService.calculateCompleteLevel(1L) == progress
+        double progress1 = todoListService.calculateCompleteLevel(1L)
+        double progress2 = todoListService.calculateCompleteLevel(2L)
+        double progress3 = todoListService.calculateCompleteLevel(3L)
 
-        where:
-        listOfTodoLists << [todosList1, todosList2, todosList3]
-        progress << [0.5, 0.66, 0.33]
-
+        then:
+            progress1 == 1/3d
+            progress2 == 1/2d
+            progress3 == 2/3d
     }
 }

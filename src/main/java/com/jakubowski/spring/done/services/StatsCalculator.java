@@ -26,20 +26,20 @@ public class StatsCalculator {
     @Autowired
     private TodoListService todoListService;
 
-    public boolean recalculateStats(long userId) {
-        if (!userRepository.existsById(userId)) return false;
-        User user = userRepository.getOne(userId);
-        if(user.getUserStatistics() == null) user.setUserStatistics(new UserStatistics());
+    void recalculateStats(long userId) {
+        if (userRepository.existsById(userId)) {
+            User user = userRepository.getOne(userId);
+            if (user.getUserStatistics() == null) user.setUserStatistics(new UserStatistics());
 
-        UserStatistics userStatistics = user.getUserStatistics();
-        userStatistics.setCompletedTasks(calculateCompletedTasks(userId));
-        userStatistics.setCompletedLists(calculateCompletedLists(userId));
-        userStatistics.setActiveLists(calculateActiveLists(userId));
-        userStatistics.setDaysWithApp(calculateDaysWithApp(userId));
-        return true;
+            UserStatistics userStatistics = user.getUserStatistics();
+            userStatistics.setCompletedTasks(calculateCompletedTasks(userId));
+            userStatistics.setCompletedLists(calculateCompletedLists(userId));
+            userStatistics.setActiveLists(calculateActiveLists(userId));
+            userStatistics.setDaysWithApp(calculateDaysWithApp(userId));
+        }
     }
 
-    public int calculateCompletedLists(long userId) {
+    private int calculateCompletedLists(long userId) {
 
         int counter = 0;
 
@@ -53,7 +53,7 @@ public class StatsCalculator {
         return counter;
     }
 
-    public int calculateCompletedTasks(long userId) {
+    private int calculateCompletedTasks(long userId) {
 
         if (!userRepository.existsById(userId)) return 0;
 
@@ -61,16 +61,18 @@ public class StatsCalculator {
         List<Todo> todos = todoRepository.getAllByTodoList_User_Id(userId);
 
         for (Todo todo:todos) {
-            if (todo.isDone()) counter++;
+            if (todo.isDone()) {
+                counter++;
+            }
         }
         return counter;
     }
 
-    public int calculateActiveLists(long userId) {
+    private int calculateActiveLists(long userId) {
         return userRepository.getOne(userId).getTodolists().size() - calculateCompletedLists(userId);
     }
 
-    public int calculateDaysWithApp(long userId) {
+    private int calculateDaysWithApp(long userId) {
         LocalDate now = LocalDate.now();
         LocalDate creationTime = userRepository.getOne(userId).getCreationDate();
         long days = DAYS.between(creationTime, now);
