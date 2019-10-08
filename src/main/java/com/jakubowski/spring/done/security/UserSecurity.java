@@ -19,10 +19,10 @@ public class UserSecurity {
                 () -> new ResourcesNotFoundException("User", "ID", userId)
         );
 
-        String principalUsername = JwtUserPrincipal.create(user).getUsername();
-        String userUsername = (String) authentication.getPrincipal();
+        String principalUsername = JwtUserPrincipal.create(user).getPassword();
+        String userUsername = (String) authentication.getCredentials();
 
-        //return userUsername.equals(principalUsername);
-        return userRepository.findById(userId).isPresent();
+        return userUsername.equals(principalUsername);
+        //return userRepository.findById(userId).isPresent();
     }
 }
