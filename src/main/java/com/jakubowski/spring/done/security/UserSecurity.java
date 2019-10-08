@@ -23,6 +23,6 @@ public class UserSecurity {
         String userUsername = (String) authentication.getPrincipal();
 
         //return userUsername.equals(principalUsername);
-        return true;
+        return userRepository.findById(userId).isPresent();
     }
 }

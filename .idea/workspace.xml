@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java" afterDir="false" />
-    </list>
+    <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -524,7 +522,7 @@
       <workItem from="1569292036587" duration="125000" />
       <workItem from="1569909587448" duration="291000" />
       <workItem from="1569910365082" duration="63488000" />
-      <workItem from="1570323126959" duration="26148000" />
+      <workItem from="1570323126959" duration="26330000" />
     </task>
     <servers />
   </component>
@@ -561,7 +559,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245482000" />
+    <option name="totallyTimeSpent" value="245664000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
