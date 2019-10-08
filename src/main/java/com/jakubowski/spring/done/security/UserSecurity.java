@@ -5,6 +5,7 @@ import com.jakubowski.spring.done.exceptions.ResourcesNotFoundException;
 import com.jakubowski.spring.done.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,11 +20,10 @@ public class UserSecurity {
                 () -> new ResourcesNotFoundException("User", "ID", userId)
         );
 
-        String principalUsername = user.getPassword();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        String principalUsername = userDetails.getUsername();
 
-        String userUsername = (String) authentication.getCredentials();
-
-        return userUsername.equals(principalUsername);
+        return user.getUsername().equals(principalUsername);
         //return userRepository.findById(userId).isPresent();
     }
 }
