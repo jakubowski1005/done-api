@@ -19,7 +19,8 @@ public class UserSecurity {
                 () -> new ResourcesNotFoundException("User", "ID", userId)
         );
 
-        String principalUsername = JwtUserPrincipal.create(user).getPassword();
+        String principalUsername = user.getPassword();
+
         String userUsername = (String) authentication.getCredentials();
 
         return userUsername.equals(principalUsername);
