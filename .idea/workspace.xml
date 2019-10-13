@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/UserControllerSpec.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/UserControllerSpec.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/UserServiceSpec.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/UserServiceSpec.groovy" afterDir="false" />
-    </list>
+    <list default="true" id="5072e148-7655-42b9-be09-81ce43908624" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/UserServiceSpec.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+            <state relative-caret-position="207">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
             </state>
           </provider>
         </entry>
@@ -34,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+            <state relative-caret-position="209">
+              <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="410">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="365">
               <caret line="95" column="118" selection-start-line="95" selection-start-column="118" selection-end-line="95" selection-end-column="118" />
             </state>
           </provider>
@@ -82,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="39" column="90" lean-forward="true" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
+              <caret line="39" column="90" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,10 +159,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/TodoListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/controllers/UserControllerSpec.groovy" />
-        <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/UserServiceSpec.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/UserServiceSpec.groovy" />
       </list>
     </option>
   </component>
@@ -503,17 +496,11 @@
       <workItem from="1569909587448" duration="291000" />
       <workItem from="1569910365082" duration="63488000" />
       <workItem from="1570323126959" duration="34364000" />
-      <workItem from="1570963024390" duration="2980000" />
+      <workItem from="1570963024390" duration="3589000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_done - 2019.10.06 at 16h 17m 38s.xml">
-      <configuration name="All in done" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_done - 2019.10.06 at 16h 26m 05s.xml">
-      <configuration name="All in done" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_done - 2019.10.08 at 23h 24m 15s.xml">
       <configuration name="All in done" configurationId="JUnit" />
     </history-entry>
@@ -538,9 +525,15 @@
     <history-entry file="All_in_done - 2019.10.13 at 13h 08m 12s.xml">
       <configuration name="All in done" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_done - 2019.10.13 at 13h 28m 44s.xml">
+      <configuration name="All in done" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_done - 2019.10.13 at 13h 29m 39s.xml">
+      <configuration name="All in done" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256678000" />
+    <option name="totallyTimeSpent" value="257287000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -565,13 +558,13 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28313252" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28313252" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.25060242" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" visible="true" weight="0.25060242" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.20722891" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.25180724" />
@@ -981,13 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="95" column="118" selection-start-line="95" selection-start-column="118" selection-end-line="95" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/WebMvcConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -995,20 +981,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        <state relative-caret-position="190">
+          <caret line="39" column="90" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1024,15 +1000,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/groovy/com/jakubowski/spring/done/services/UserServiceSpec.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+        <state relative-caret-position="207">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/services/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="39" column="90" lean-forward="true" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
+        <state relative-caret-position="209">
+          <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="95" column="118" selection-start-line="95" selection-start-column="118" selection-end-line="95" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jakubowski/spring/done/security/UserSecurity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
