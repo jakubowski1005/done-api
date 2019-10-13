@@ -22,6 +22,11 @@ public class UserController {
         return userService.getUserById(userId);
     }
 
+    @GetMapping
+    public User getUserByUsernameOrEmail(@PathVariable String usernameOrEmail) {
+        return userService.getUserByUsernameOrEmail(usernameOrEmail);
+    }
+
     @GetMapping("/users/{userId}/properties")
     public UserProperties getUserProperties(@PathVariable long userId) {
         return userService.getUserProperties(userId);

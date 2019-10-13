@@ -51,7 +51,7 @@ class UserControllerSpec extends Specification {
         statisticsJson = objectMapper.writeValueAsString(statistics)
     }
 
-    void 'get customer return customer by id'() {
+    void 'get user return user by id'() {
         given:
         1 * userService.getUserById(1) >> user1
 
@@ -60,6 +60,17 @@ class UserControllerSpec extends Specification {
         .andExpect(MockMvcResultMatchers.status().isOk())
         .andExpect(MockMvcResultMatchers.content().json(user1Json))
     }
+
+    void 'get user return user by username or email'() {
+        given:
+        1 * userService.getUserByUsernameOrEmail('username') >> user1
+
+        expect:
+        mockMvc.perform(MockMvcRequestBuilders.get('/api/users/{username}', 'username'))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().json(user1Json))
+    }
+
 
     void 'get properties return customers properties'() {
         given:
