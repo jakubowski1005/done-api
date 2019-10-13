@@ -23,4 +23,14 @@ public class UserSecurity {
         String current = authentication.getName();
         return current.equals(user.getUsername());
     }
+
+    public boolean isUserAuthorizedToGetUserByUsername(Authentication authentication, String usernameOrEmail) {
+
+        User user = userRepository.findByUsernameOrEmail(usernameOrEmail).orElseThrow(
+                () -> new ResourcesNotFoundException("User", "username or email", usernameOrEmail)
+        );
+
+        String current = authentication.getName();
+        return current.equals(user.getUsername());
+    }
 }

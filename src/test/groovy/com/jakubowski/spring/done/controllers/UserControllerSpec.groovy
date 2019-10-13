@@ -63,12 +63,13 @@ class UserControllerSpec extends Specification {
 
     void 'get user return user by username or email'() {
         given:
-        1 * userService.getUserByUsernameOrEmail('username') >> user1
+        1 * userService.getUserByUsernameOrEmail('user1') >> Arrays.asList(user1)
+        String listJson = objectMapper.writeValueAsString(Arrays.asList(user1))
 
         expect:
-        mockMvc.perform(MockMvcRequestBuilders.get('/api/users/{username}', 'username'))
+        mockMvc.perform(MockMvcRequestBuilders.get('/api/users?username=user1'))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().json(user1Json))
+                .andExpect(MockMvcResultMatchers.content().json(listJson))
     }
 
 

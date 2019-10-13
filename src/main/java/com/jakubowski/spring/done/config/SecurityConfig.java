@@ -92,6 +92,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .permitAll()
                     .antMatchers("/api/users/{userId}/**")
                         .access("@userSecurity.isUserAuthorized(authentication, #userId)")
+                    .antMatchers("/api/users?username={usernameOrEmail}")
+                        .access("@userSecurity.isUserAuthorizedToGetUserByUsername(authentication, #usernameOrEmail)")
                 .anyRequest()
                     .authenticated();
 

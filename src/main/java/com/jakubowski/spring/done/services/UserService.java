@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,12 +33,11 @@ public class UserService {
 
 
     public User getUserById(long userId) {
-        return userRepository.findById(userId).orElse(null);
+        return userRepository.findById(userId).get();
     }
 
-    public User getUserByUsernameOrEmail(String usernameOrEmail) {
-        Optional<User> found = userRepository.findByUsernameOrEmail(usernameOrEmail);
-        return found.orElse(null);
+    public List<User> getUserByUsernameOrEmail(String usernameOrEmail) {
+        return Arrays.asList(userRepository.findByUsernameOrEmail(usernameOrEmail).get());
     }
 
     public UserProperties getUserProperties(long userId) {

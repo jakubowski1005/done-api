@@ -45,20 +45,11 @@ class UserServiceSpec extends Specification {
 
     void 'get user by username or email should return correct user'() {
         when:
-        repository.findByUsernameOrEmail('sth') >> user
-        User found = service.getUserByUsernameOrEmail('sth')
+        repository.findByUsernameOrEmail('user1') >> Arrays.asList(user)
+        List found = service.getUserByUsernameOrEmail('user1')
 
         then:
-        found == user
-    }
-
-    void 'get user by username or email should return null when user doesnt exist'() {
-        when:
-        repository.findByUsernameOrEmail('sth') >> null
-        User found = service.getUserByUsernameOrEmail('sth')
-
-        then:
-        found == null
+        found == Arrays.asList(user)
     }
 
     void 'get user props should return props by id'() {
