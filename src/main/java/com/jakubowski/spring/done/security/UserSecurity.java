@@ -21,7 +21,7 @@ public class UserSecurity {
         );
 
         String current = authentication.getName();
-        return true;//current.equals(user.getUsername());
+        return current.equals(user.getUsername());
     }
 
     public boolean isUserAuthorizedToGetUserByUsername(Authentication authentication, String usernameOrEmail) {
@@ -31,6 +31,6 @@ public class UserSecurity {
         );
 
         String current = authentication.getName();
-        return true;//current.equals(user.getUsername());
+        return current.equals(user.getUsername());
     }
 }
