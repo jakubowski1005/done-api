@@ -82,7 +82,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                     .and()
                 .authorizeRequests()
-                    .antMatchers("/","/main","/api/")
+                    .antMatchers("/","/main","/api/", "/**")
                         .permitAll()
                     .antMatchers("/api/auth/**")
                         .permitAll()
@@ -90,10 +90,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .permitAll()
                     .antMatchers("/h2-console/**")
                         .permitAll()
-                    .antMatchers("/api/users/{userId}/**")
-                        .access("@userSecurity.isUserAuthorized(authentication, #userId)")
-                    .antMatchers("/api/users?username={usernameOrEmail}")
-                        .access("@userSecurity.isUserAuthorizedToGetUserByUsername(authentication, #usernameOrEmail)")
+//                    .antMatchers("/api/users/{userId}/**")
+//                        .access("@userSecurity.isUserAuthorized(authentication, #userId)")
+//                    .antMatchers("/api/users?username={usernameOrEmail}")
+//                        .access("@userSecurity.isUserAuthorizedToGetUserByUsername(authentication, #usernameOrEmail)")
                 .anyRequest()
                     .authenticated();
 
