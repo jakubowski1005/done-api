@@ -74,6 +74,7 @@ public class TodoListService {
         TodoList oldTodoList = todoListRepository.findById(listId).get();
         user.get().getTodolists().remove(oldTodoList);
         todoListRepository.delete(oldTodoList);
+        todoList.setUser(user.get());
         user.get().getTodolists().add(todoList);
         todoListRepository.save(todoList);
 
