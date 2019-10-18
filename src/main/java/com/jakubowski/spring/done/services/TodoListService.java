@@ -53,6 +53,7 @@ public class TodoListService {
         }
 
         user.get().getTodolists().add(todoList);
+        todoList.setUser(user.get());
         todoListRepository.save(todoList);
         statsCalculator.recalculateStats(userId);
         return new ResponseEntity<>(new ApiResponse(true, "Todo list added successfully!"), HttpStatus.CREATED);
