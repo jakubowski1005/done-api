@@ -16,6 +16,7 @@ class UserServiceSpec extends Specification {
     UserPropertiesRepository propertiesRepository
     UserStatisticsRepository statisticsRepository
     UserService service
+    StatsCalculator statsCalculator
 
     User user
     UserProperties properties
@@ -25,11 +26,12 @@ class UserServiceSpec extends Specification {
         repository = Stub(UserRepository)
         propertiesRepository = Stub(UserPropertiesRepository)
         statisticsRepository = Stub(UserStatisticsRepository)
+        statsCalculator = Mock(StatsCalculator)
         service = new UserService(
-                [userRepository: repository, userPropertiesRepository: propertiesRepository, userStatisticsRepository: statisticsRepository]
+                [userRepository: repository, userPropertiesRepository: propertiesRepository, userStatisticsRepository: statisticsRepository, statsCalculator: statsCalculator]
         )
 
-        properties = new UserProperties(1L, "name", "surname", "url")
+        properties = new UserProperties(1L, "name", "surname", "male", "pl", "url")
         statistics = new UserStatistics(1L, 1, 2, 3, 4)
         user = new User(1L, "username", "email@gmail.com", "password", null, properties, statistics)
     }
@@ -45,11 +47,11 @@ class UserServiceSpec extends Specification {
 
     void 'get user by username or email should return correct user'() {
         when:
-        repository.findByUsernameOrEmail('user1') >> Arrays.asList(user)
-        List found = service.getUserByUsernameOrEmail('user1')
+        repository.findByUsernameOrEmail('user1') >> Optional.of(user)
+        User found = service.getUserByUsernameOrEmail('user1')
 
         then:
-        found == Arrays.asList(user)
+        found == user
     }
 
     void 'get user props should return props by id'() {
@@ -81,7 +83,7 @@ class UserServiceSpec extends Specification {
 
     void 'should update existing props'() {
         given:
-        UserProperties newProps = new UserProperties(2L, "name", "surname", "avatarUrl")
+        UserProperties newProps = new UserProperties(2L, "name", "surname", "female", "gb", "avatarUrl")
 
         when:
         repository.findById(1L) >> Optional.of(user)
@@ -107,7 +109,7 @@ class UserServiceSpec extends Specification {
 
     void 'should create unexisting props'() {
         given:
-        UserProperties newProps = new UserProperties(2L, "name", "surname", "avatarUrl")
+        UserProperties newProps = new UserProperties(2L, "name", "surname", "female", "gb", "avatarUrl")
         user.setUserProperties(null)
 
         when:

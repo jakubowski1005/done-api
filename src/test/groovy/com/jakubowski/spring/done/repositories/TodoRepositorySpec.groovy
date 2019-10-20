@@ -69,6 +69,8 @@ class TodoRepositorySpec extends Specification {
         entityManager.persist(todo3)
         entityManager.persist(todo4)
         entityManager.persist(todo5)
+        entityManager.persist(user.getUserProperties())
+        entityManager.persist(user.getUserStatistics())
 
     }
 

@@ -39,7 +39,7 @@ class UserControllerSpec extends Specification {
         user1 = new User([username: 'user1', email: 'email@gmail.com', password: 'pass'])
         user2 = new User([username: 'user2', email: 'email1@gmail.com', password: 'pass'])
 
-        properties = new UserProperties([id: 1L, name: 'name', lastName: 'surname', avatarURL: 'url'])
+        properties = new UserProperties([id: 1L, name: 'name', lastName: 'surname', gender: 'male', nationality: 'pl', avatarURL: 'url'])
         statistics = new UserStatistics([id: 1L, completedTasks: 2, completedLists: 4, daysWithApp: 3, activeLists: 6])
 
         user1.setUserProperties(properties)
@@ -63,13 +63,12 @@ class UserControllerSpec extends Specification {
 
     void 'get user return user by username or email'() {
         given:
-        1 * userService.getUserByUsernameOrEmail('user1') >> Arrays.asList(user1)
-        String listJson = objectMapper.writeValueAsString(Arrays.asList(user1))
+        1 * userService.getUserByUsernameOrEmail('user1') >> user1
 
         expect:
         mockMvc.perform(MockMvcRequestBuilders.get('/api/users?username=user1'))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().json(listJson))
+                .andExpect(MockMvcResultMatchers.content().json(user1Json))
     }
 
 

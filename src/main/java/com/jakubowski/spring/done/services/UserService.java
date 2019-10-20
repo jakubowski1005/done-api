@@ -31,13 +31,19 @@ public class UserService {
     @Autowired
     private UserStatisticsRepository userStatisticsRepository;
 
+    @Autowired
+    private StatsCalculator statsCalculator;
+
 
     public User getUserById(long userId) {
+        statsCalculator.recalculateStats(userId);
         return userRepository.findById(userId).get();
     }
 
-    public List<User> getUserByUsernameOrEmail(String usernameOrEmail) {
-        return Arrays.asList(userRepository.findByUsernameOrEmail(usernameOrEmail).get());
+    public User getUserByUsernameOrEmail(String usernameOrEmail) {
+        User found = Arrays.asList(userRepository.findByUsernameOrEmail(usernameOrEmail).get()).get(0);
+        statsCalculator.recalculateStats(found.getId());
+        return found;
     }
 
     public UserProperties getUserProperties(long userId) {

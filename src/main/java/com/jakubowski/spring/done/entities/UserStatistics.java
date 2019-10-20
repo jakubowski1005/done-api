@@ -1,8 +1,6 @@
 package com.jakubowski.spring.done.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,13 +12,22 @@ import javax.persistence.Table;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 public class UserStatistics {
 
     @Id
     @GeneratedValue
     private Long id;
+
+    @NonNull
     private int completedTasks;
+
+    @NonNull
     private int completedLists;
+
+    @NonNull
     private int daysWithApp;
+
+    @NonNull
     private int activeLists;
 }

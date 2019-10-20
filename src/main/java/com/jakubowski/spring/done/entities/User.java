@@ -50,10 +50,10 @@ public class User {
     private List<TodoList> todolists = new ArrayList<>();
 
     @OneToOne
-    private UserProperties userProperties;
+    private UserProperties userProperties = new UserProperties("", "", "unknown", "unknown");
 
     @OneToOne
-    private UserStatistics userStatistics;
+    private UserStatistics userStatistics = new UserStatistics(0,0,0,0);
 
     @JsonIgnore
     private final LocalDate creationDate = LocalDate.now();

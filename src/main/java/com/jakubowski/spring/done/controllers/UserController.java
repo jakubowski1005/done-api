@@ -9,8 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api")
@@ -25,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public List<User> getAllUsers(@RequestParam(value = "username") String usernameOrEmail) {
+    public User getAllUsers(@RequestParam(value = "username") String usernameOrEmail) {
         return userService.getUserByUsernameOrEmail(usernameOrEmail);
     }
 

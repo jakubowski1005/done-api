@@ -11,7 +11,6 @@ import spock.lang.Specification
 //@Ignore
 @ContextConfiguration
 @DataJpaTest
-
 class UserRepositorySpec extends Specification {
 
     @Autowired
@@ -26,6 +25,8 @@ class UserRepositorySpec extends Specification {
     void setup() {
         user = new User('johnny', 'email@gmail.com', 'password')
         entityManager.persist(user)
+        entityManager.persist(user.getUserProperties())
+        entityManager.persist(user.getUserStatistics())
     }
 
     void 'user exists by username'() {
