@@ -25,6 +25,12 @@ public class UserProperties {
     @Size(max = 30)
     private String lastName;
 
+    @Size(max = 6)
+    private String gender;
+
+    @Size(max = 6)
+    private String nationality;
+
     @URL
     private String avatarURL;
 }
