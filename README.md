@@ -1,8 +1,8 @@
 # Done!
 
-***Done!*** is simple web application that allows to organize work by dividing task into smaller pieces
+***Done!*** is a simple web application that allows you to organize your work by managing task lists
 
-*This repository is responsible for server-side part of application. Client-side part of the app is available [here](https://github.com/jakubowski1005/done-client).*
+*This repository contains server-side part of application. Client-side part of the app is available [here](https://github.com/jakubowski1005/done-client).*
 
 
 ## Table of content
@@ -18,7 +18,7 @@
 - Spring Security with JWT
 - Spring JPA and Hibernate
 - Spock Framework
-- Lobok
+- Lombok
 - PostgreSQL
 
 ## Author
